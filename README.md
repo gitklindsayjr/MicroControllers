@@ -1,4 +1,4 @@
-#Ros MSP432 Code Composer Studio
+# Ros MSP432 Code Composer Studio
 
 This repository contains 2 folders. The first one ROS_MSP432_Red contains a project static library, RosMspHwdLib,
 two subscriber projects and one publisher project.  In addition all the metadata to run Code Composer Studio ccsv8
