@@ -1,0 +1,844 @@
+******************************************************************************
+                  TI ARM Linker Unix v18.1.4                   
+******************************************************************************
+>> Linked Wed Jan  9 11:01:51 2019
+
+OUTPUT FILE NAME:   <PublisherHelloWorld.out>
+ENTRY POINT SYMBOL: "_c_int00_noargs"  address: 00002299
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  MAIN                  00000000   00040000  00002b76  0003d48a  R  X
+  INFO                  00200000   00004000  00000000  00004000  R  X
+  SRAM_CODE             01000000   00010000  0000104c  0000efb4  RW X
+  SRAM_DATA             20000000   00010000  0000104c  0000efb4  RW  
+
+
+SEGMENT ALLOCATION MAP
+
+run origin  load origin   length   init length attrs members
+----------  ----------- ---------- ----------- ----- -------
+00000000    00000000    00002b78   00002b78    r-x
+  00000000    00000000    000000e4   000000e4    r-- .intvecs
+  000000e4    000000e4    0000262a   0000262a    r-x .text
+  00002710    00002710    0000040c   0000040c    r-- .const
+  00002b1c    00002b1c    00000004   00000004    r-- .init_array
+  00002b20    00002b20    00000058   00000058    r-- .cinit
+20000000    20000000    00000e4c   00000000    rw-
+  20000000    20000000    000000e8   00000000    rw- .vtable
+  200000e8    200000e8    00000930   00000000    rw- .bss
+  20000a18    20000a18    00000400   00000000    rw- .sysmem
+  20000e18    20000e18    00000034   00000000    rw- .data
+2000fe00    2000fe00    00000200   00000000    rw-
+  2000fe00    2000fe00    00000200   00000000    rw- .stack
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.intvecs   0    00000000    000000e4     
+                  00000000    000000e4     startup_msp432p401r_ccs.obj (.intvecs:retain)
+
+.binit     0    00000000    00000000     
+
+.text      0    000000e4    0000262a     
+                  000000e4    0000032c     system_msp432p401r.obj (.text)
+                  00000410    00000326     hello_world.obj (.text:_ZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EE8spinOnceEv)
+                  00000736    00000298     hello_world.obj (.text:_ZN14rosserial_msgs20RequestParamResponse11deserializeEPh)
+                  000009ce    00000002     rtsv7M4_T_le_v4SPD16_eabi.lib : stdlib_typeinfo.cpp.obj (.text:_ZNSt9type_infoD1Ev)
+                  000009d0    0000027c     RosMspHwdLib.lib : clocks.obj (.text)
+                  00000c4c    0000027c                      : my_uart.obj (.text)
+                  00000ec8    000001f2     hello_world.obj (.text:_ZNK14rosserial_msgs20RequestParamResponse9serializeEPh)
+                  000010ba    00000196     hello_world.obj (.text:_ZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EE15negotiateTopicsEv)
+                  00001250    00000190     hello_world.obj (.text:_ZN14rosserial_msgs9TopicInfo11deserializeEPh)
+                  000013e0    0000012c     hello_world.obj (.text:_ZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EE7publishEiPKNS_3MsgE)
+                  0000150c    00000116     hello_world.obj (.text:_ZNK14rosserial_msgs9TopicInfo9serializeEPh)
+                  00001622    00000002     rtsv7M4_T_le_v4SPD16_eabi.lib : _lock.c.obj (.text:_nop)
+                  00001624    00000114                                   : memory.c.obj (.text:realloc)
+                  00001738    000000ec     hello_world.obj (.text:_ZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EEC1Ev)
+                  00001824    000000d8     rtsv7M4_T_le_v4SPD16_eabi.lib : memory.c.obj (.text:free)
+                  000018fc    000000c0     RosMspHwdLib.lib : time.obj (.text)
+                  000019bc    0000009e     hello_world.obj (.text:_ZN8std_msgs4Time11deserializeEPh)
+                  00001a5a    0000009c     rtsv7M4_T_le_v4SPD16_eabi.lib : memcpy_t2.asm.obj (.text)
+                  00001af6    0000009a     hello_world.obj (.text:_ZNK8std_msgs4Time9serializeEPh)
+                  00001b90    00000080     msp432p4xx_driverlib.lib : interrupt.o (.text:Interrupt_enableInterrupt)
+                  00001c10    0000007e     hello_world.obj (.text:_ZN14rosserial_msgs3Log11deserializeEPh)
+                  00001c8e    0000007a     rtsv7M4_T_le_v4SPD16_eabi.lib : memset_t2.asm.obj (.text)
+                  00001d08    00000078                                   : memory.c.obj (.text:malloc)
+                  00001d80    00000070     hello_world.obj (.text:_ZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EE8syncTimeEPh)
+                  00001df0    0000006e     hello_world.obj (.text:_ZN8std_msgs6String11deserializeEPh)
+                  00001e5e    00000002     rtsv7M4_T_le_v4SPD16_eabi.lib : div0.asm.obj (.text)
+                  00001e60    0000006c     hello_world.obj (.text)
+                  00001ecc    00000068     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_decompress_lzss.c.obj (.text:decompress:lzss:__TI_decompress_lzss)
+                  00001f34    00000060     hello_world.obj (.text:_ZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EE6setNowERNS_4TimeE)
+                  00001f94    00000060     rtsv7M4_T_le_v4SPD16_eabi.lib : autoinit.c.obj (.text:__TI_auto_init_nobinit:__TI_auto_init_nobinit)
+                  00001ff4    0000005e                                   : i_divt2.asm.obj (.text)
+                  00002052    00000002     --HOLE-- [fill = 0]
+                  00002054    0000005c     msp432p4xx_driverlib.lib : interrupt.o (.text:Interrupt_registerInterrupt)
+                  000020b0    0000005c     hello_world.obj (.text:_ZNK14rosserial_msgs3Log9serializeEPh)
+                  0000210c    00000052     hello_world.obj (.text:_ZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EE9advertiseERNS_9PublisherE)
+                  0000215e    00000048     hello_world.obj (.text:_ZNK8std_msgs6String9serializeEPh)
+                  000021a6    00000002     --HOLE-- [fill = 0]
+                  000021a8    0000003c     hello_world.obj (.text:_ZN14rosserial_msgs20RequestParamResponseC1Ev)
+                  000021e4    0000003c     hello_world.obj (.text:_ZN14rosserial_msgs9TopicInfoC1Ev)
+                  00002220    0000003c     hello_world.obj (.text:_ZN3ros3Msg8arrToVarIjPhEEvRT_T0_)
+                  0000225c    0000003c     rtsv7M4_T_le_v4SPD16_eabi.lib : memory.c.obj (.text:minsert)
+                  00002298    00000038                                   : boot_cortex_m.c.obj (.text:_c_int00_noargs:_c_int00_noargs)
+                  000022d0    00000038                                   : memory.c.obj (.text:minit)
+                  00002308    00000034     hello_world.obj (.text:_ZN15Msp432CHardware5writeEPhi)
+                  0000233c    00000034     hello_world.obj (.text:_ZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EE3logEcPKc)
+                  00002370    00000030     hello_world.obj (.text:_ZN3ros3Msg8varToArrIPhjEEvT_T0_)
+                  000023a0    0000002e     hello_world.obj (.text:_ZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EE15requestSyncTimeEv)
+                  000023ce    0000002e     hello_world.obj (.text:_ZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EE8initNodeEv)
+                  000023fc    00000028     hello_world.obj (.text:_ZN14rosserial_msgs3LogC1Ev)
+                  00002424    00000028     rtsv7M4_T_le_v4SPD16_eabi.lib : memory.c.obj (.text:mremove)
+                  0000244c    00000024     hello_world.obj (.text:_ZN3ros9PublisherC1EPKcPNS_3MsgEi)
+                  00002470    00000024     hello_world.obj (.text:_ZN8std_msgs6StringC1Ev)
+                  00002494    00000020     hello_world.obj (.text:_ZN8std_msgs4TimeC1Ev)
+                  000024b4    0000001e     hello_world.obj (.text:_ZN3ros9Publisher7publishEPKNS_3MsgE)
+                  000024d2    00000002     --HOLE-- [fill = 0]
+                  000024d4    00000018     hello_world.obj (.text:_ZN3ros15NodeHandleBase_C1Ev)
+                  000024ec    00000018     hello_world.obj (.text:_ZN3ros3MsgC1Ev)
+                  00002504    00000018     hello_world.obj (.text:_ZN3ros4TimeC1Ev)
+                  0000251c    00000016     msp432p4xx_driverlib.lib : timer32.o (.text:Timer32_registerInterrupt)
+                  00002532    00000002     --HOLE-- [fill = 0]
+                  00002534    00000014     hello_world.obj (.text:_ZN15Msp432CHardware4timeEv)
+                  00002548    00000014     rtsv7M4_T_le_v4SPD16_eabi.lib : strlen.c.obj (.text:strlen)
+                  0000255c    00000012     hello_world.obj (.text:_ZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EE8logerrorEPKc)
+                  0000256e    00000010     msp432p4xx_driverlib.lib : interrupt.o (.text:Interrupt_enableMaster)
+                  0000257e    00000002     --HOLE-- [fill = 0]
+                  00002580    00000010     hello_world.obj (.text:_ZN14rosserial_msgs20RequestParamResponse6getMD5Ev)
+                  00002590    00000010     hello_world.obj (.text:_ZN14rosserial_msgs20RequestParamResponse7getTypeEv)
+                  000025a0    00000010     hello_world.obj (.text:_ZN14rosserial_msgs3Log6getMD5Ev)
+                  000025b0    00000010     hello_world.obj (.text:_ZN14rosserial_msgs3Log7getTypeEv)
+                  000025c0    00000010     hello_world.obj (.text:_ZN14rosserial_msgs9TopicInfo6getMD5Ev)
+                  000025d0    00000010     hello_world.obj (.text:_ZN14rosserial_msgs9TopicInfo7getTypeEv)
+                  000025e0    00000010     hello_world.obj (.text:_ZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EE9connectedEv)
+                  000025f0    00000010     hello_world.obj (.text:_ZN8std_msgs4Time6getMD5Ev)
+                  00002600    00000010     hello_world.obj (.text:_ZN8std_msgs4Time7getTypeEv)
+                  00002610    00000010     hello_world.obj (.text:_ZN8std_msgs6String6getMD5Ev)
+                  00002620    00000010     hello_world.obj (.text:_ZN8std_msgs6String7getTypeEv)
+                  00002630    0000000e     rtsv7M4_T_le_v4SPD16_eabi.lib : typeinfo.c.obj (.text:_ZN10__cxxabiv117__class_type_infoD0Ev)
+                  0000263e    0000000e                                   : typeinfo.c.obj (.text:_ZN10__cxxabiv120__si_class_type_infoD0Ev)
+                  0000264c    0000000e     hello_world.obj (.text:_ZN15Msp432CHardware5delayEj)
+                  0000265a    0000000e     hello_world.obj (.text:_ZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EE11getHardwareEv)
+                  00002668    0000000e     hello_world.obj (.text:_ZN3ros9Publisher15getEndpointTypeEv)
+                  00002676    0000000e     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_decompress_none.c.obj (.text:decompress:none:__TI_decompress_none)
+                  00002684    0000000e     startup_msp432p401r_ccs.obj (.text)
+                  00002692    0000000c     msp432p4xx_driverlib.lib : cpu.o (.text:CPU_cpsie)
+                  0000269e    0000000c     hello_world.obj (.text:_ZN15Msp432CHardware4initEv)
+                  000026aa    0000000c     hello_world.obj (.text:_ZN15Msp432CHardwareC1Ev)
+                  000026b6    0000000c     hello_world.obj (.text:_ZN3ros15NodeHandleBase_C2Ev)
+                  000026c2    0000000c     hello_world.obj (.text:_ZN3ros3MsgC2Ev)
+                  000026ce    0000000c     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_zero_init.c.obj (.text:decompress:ZI:__TI_zero_init)
+                  000026da    0000000a     hello_world.obj (.text:_ZN15Msp432CHardware4readEv)
+                  000026e4    00000008     rtsv7M4_T_le_v4SPD16_eabi.lib : new.cpp.obj (.text:_ZdlPv)
+                  000026ec    00000006                                   : pure_virt.c.obj (.text:__cxa_pure_virtual)
+                  000026f2    00000004     msp432p4xx_driverlib.lib : cpu.o (.text:CPU_wfi)
+                  000026f6    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : typeinfo.c.obj (.text:_ZN10__cxxabiv117__class_type_infoD1Ev)
+                  000026fa    00000004                                   : typeinfo.c.obj (.text:_ZN10__cxxabiv120__si_class_type_infoD1Ev)
+                  000026fe    00000004                                   : new.cpp.obj (.text:_ZdlPvj)
+                  00002702    00000004                                   : error.c.obj (.text:__abort_execution)
+                  00002706    00000004                                   : pre_init.c.obj (.text:_system_pre_init)
+                  0000270a    00000004                                   : exit.c.obj (.text:abort:abort)
+
+.const     0    00002710    0000040c     
+                  00002710    0000003d     hello_world.obj (.const:.typeinfo:_ZTSN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EEE)
+                  0000274d    00000039     hello_world.obj (.const:.string:_ZZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EE7publishEiPKNS_3MsgEEs)
+                  00002786    00000029     hello_world.obj (.const:.typeinfo:_ZTSN14rosserial_msgs20RequestParamResponseE)
+                  000027af    00000025     rtsv7M4_T_le_v4SPD16_eabi.lib : typeinfo.c.obj (.const:.typeinfo:_ZTSN10__cxxabiv120__si_class_type_infoE)
+                  000027d4    00000024     RosMspHwdLib.lib : my_uart.obj (.const:uartConfig)
+                  000027f8    00000022     rtsv7M4_T_le_v4SPD16_eabi.lib : typeinfo.c.obj (.const:.typeinfo:_ZTSN10__cxxabiv117__class_type_infoE)
+                  0000281a    00000021     hello_world.obj (.const:.string:_ZZN14rosserial_msgs20RequestParamResponse6getMD5EvEs)
+                  0000283b    00000021     hello_world.obj (.const:.string:_ZZN14rosserial_msgs3Log6getMD5EvEs)
+                  0000285c    00000021     hello_world.obj (.const:.string:_ZZN14rosserial_msgs9TopicInfo6getMD5EvEs)
+                  0000287d    00000021     hello_world.obj (.const:.string:_ZZN8std_msgs4Time6getMD5EvEs)
+                  0000289e    00000021     hello_world.obj (.const:.string:_ZZN8std_msgs6String6getMD5EvEs)
+                  000028bf    0000001d     hello_world.obj (.const:.typeinfo:_ZTSN14rosserial_msgs9TopicInfoE)
+                  000028dc    0000001c     hello_world.obj (.const:.string:_ZN32_INTERNAL_15_hello_world_cpp_nh_14rosserial_msgs12REQUESTPARAME)
+                  000028f8    00000019     hello_world.obj (.const:.string:_ZZN14rosserial_msgs9TopicInfo7getTypeEvEs)
+                  00002911    00000018     hello_world.obj (.const:.typeinfo:_ZTSN3ros15NodeHandleBase_E)
+                  00002929    00000001     hello_world.obj (.const:.string:_ZZN14rosserial_msgs3LogC1EvEs)
+                  0000292a    00000001     hello_world.obj (.const:.string:_ZZN14rosserial_msgs9TopicInfoC1EvEs)
+                  0000292b    00000001     hello_world.obj (.const:.string:_ZZN8std_msgs6StringC1EvEs)
+                  0000292c    00000018     hello_world.obj (.const:_ZTVN14rosserial_msgs20RequestParamResponseE)
+                  00002944    00000018     hello_world.obj (.const:_ZTVN14rosserial_msgs3LogE)
+                  0000295c    00000018     hello_world.obj (.const:_ZTVN14rosserial_msgs9TopicInfoE)
+                  00002974    00000018     hello_world.obj (.const:_ZTVN3ros3MsgE)
+                  0000298c    00000018     hello_world.obj (.const:_ZTVN8std_msgs4TimeE)
+                  000029a4    00000018     hello_world.obj (.const:_ZTVN8std_msgs6StringE)
+                  000029bc    00000017     hello_world.obj (.const:.typeinfo:_ZTSN14rosserial_msgs3LogE)
+                  000029d3    00000001     --HOLE-- [fill = 0]
+                  000029d4    00000014     hello_world.obj (.const:_ZTVN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EEE)
+                  000029e8    00000014     hello_world.obj (.const:_ZTVN3ros15NodeHandleBase_E)
+                  000029fc    00000013     hello_world.obj (.const:.string:_ZZN14rosserial_msgs3Log7getTypeEvEs)
+                  00002a0f    00000013     hello_world.obj (.const:.typeinfo:_ZTSN8std_msgs6StringE)
+                  00002a22    00000011     hello_world.obj (.const:.typeinfo:_ZTSN8std_msgs4TimeE)
+                  00002a33    00000010     hello_world.obj (.const:.string:_ZZN8std_msgs6String7getTypeEvEs)
+                  00002a43    00000001     --HOLE-- [fill = 0]
+                  00002a44    00000010     rtsv7M4_T_le_v4SPD16_eabi.lib : typeinfo.c.obj (.const:_ZTVN10__cxxabiv117__class_type_infoE)
+                  00002a54    00000010                                   : typeinfo.c.obj (.const:_ZTVN10__cxxabiv120__si_class_type_infoE)
+                  00002a64    0000000f     hello_world.obj (.const:.string:$P$T43$1)
+                  00002a73    0000000e     hello_world.obj (.const:.string:_ZZN8std_msgs4Time7getTypeEvEs)
+                  00002a81    0000000d     rtsv7M4_T_le_v4SPD16_eabi.lib : stdlib_typeinfo.cpp.obj (.const:.typeinfo:_ZTSSt9type_info)
+                  00002a8e    00000002     --HOLE-- [fill = 0]
+                  00002a90    0000000c                                   : typeinfo.c.obj (.const:.typeinfo:_ZTIN10__cxxabiv117__class_type_infoE)
+                  00002a9c    0000000c                                   : typeinfo.c.obj (.const:.typeinfo:_ZTIN10__cxxabiv120__si_class_type_infoE)
+                  00002aa8    0000000c     hello_world.obj (.const:.typeinfo:_ZTIN14rosserial_msgs20RequestParamResponseE)
+                  00002ab4    0000000c     hello_world.obj (.const:.typeinfo:_ZTIN14rosserial_msgs3LogE)
+                  00002ac0    0000000c     hello_world.obj (.const:.typeinfo:_ZTIN14rosserial_msgs9TopicInfoE)
+                  00002acc    0000000c     hello_world.obj (.const:.typeinfo:_ZTIN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EEE)
+                  00002ad8    0000000c     hello_world.obj (.const:.typeinfo:_ZTIN8std_msgs4TimeE)
+                  00002ae4    0000000c     hello_world.obj (.const:.typeinfo:_ZTIN8std_msgs6StringE)
+                  00002af0    0000000b     hello_world.obj (.const:.typeinfo:_ZTSN3ros3MsgE)
+                  00002afb    00000001     --HOLE-- [fill = 0]
+                  00002afc    00000008     hello_world.obj (.const:.typeinfo:_ZTIN3ros15NodeHandleBase_E)
+                  00002b04    00000008     hello_world.obj (.const:.typeinfo:_ZTIN3ros3MsgE)
+                  00002b0c    00000008     rtsv7M4_T_le_v4SPD16_eabi.lib : stdlib_typeinfo.cpp.obj (.const:.typeinfo:_ZTISt9type_info)
+                  00002b14    00000008     msp432p4xx_driverlib.lib : interrupt.o (.const:g_pulEnRegs)
+
+.cinit     0    00002b20    00000058     
+                  00002b20    0000001f     (.cinit..data.load) [load image, compression = lzss]
+                  00002b3f    00000001     --HOLE-- [fill = 0]
+                  00002b40    0000000c     (__TI_handler_table)
+                  00002b4c    00000004     --HOLE-- [fill = 0]
+                  00002b50    00000008     (.cinit..bss.load) [load image, compression = zero_init]
+                  00002b58    00000008     (.cinit..vtable.load) [load image, compression = zero_init]
+                  00002b60    00000018     (__TI_cinit_table)
+
+.init_array 
+*          0    00002b1c    00000004     
+                  00002b1c    00000004     hello_world.obj (.init_array)
+
+.vtable    0    20000000    000000e8     UNINITIALIZED
+                  20000000    000000e8     msp432p4xx_driverlib.lib : interrupt.o (.vtable)
+
+.bss       0    200000e8    00000930     UNINITIALIZED
+                  200000e8    0000052c     hello_world.obj (.bss:nh_)
+                  20000614    00000200     (.common:_uartRxBuffer)
+                  20000814    00000200     (.common:_uartTxBuffer)
+                  20000a14    00000004     (.common:_periodicSvc)
+
+.sysmem    0    20000a18    00000400     UNINITIALIZED
+                  20000a18    00000008     rtsv7M4_T_le_v4SPD16_eabi.lib : memory.c.obj (.sysmem)
+                  20000a20    000003f8     --HOLE--
+
+.data      0    20000e18    00000034     UNINITIALIZED
+                  20000e18    00000010     RosMspHwdLib.lib : my_uart.obj (.data)
+                  20000e28    0000000c     rtsv7M4_T_le_v4SPD16_eabi.lib : memory.c.obj (.data:$O1$$)
+                  20000e34    0000000c     RosMspHwdLib.lib : clocks.obj (.data)
+                  20000e40    00000008     rtsv7M4_T_le_v4SPD16_eabi.lib : _lock.c.obj (.data:$O1$$)
+                  20000e48    00000004     system_msp432p401r.obj (.data)
+
+.stack     0    2000fe00    00000200     UNINITIALIZED
+                  2000fe00    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : boot_cortex_m.c.obj (.stack)
+                  2000fe04    000001fc     --HOLE--
+
+MODULE SUMMARY
+
+       Module                        code   ro data   rw data
+       ------                        ----   -------   -------
+    ./ccs/
+       system_msp432p401r.obj        812    0         8      
+       startup_msp432p401r_ccs.obj   14     228       0      
+    +--+-----------------------------+------+---------+---------+
+       Total:                        826    228       8      
+                                                             
+    ./src/
+       hello_world.obj               5682   843       2648   
+    +--+-----------------------------+------+---------+---------+
+       Total:                        5682   843       2648   
+                                                             
+    /home/pops/MicroControllers/ROS_MSP432_Red/RosMspHwdLib/Debug/RosMspHwdLib.lib
+       my_uart.obj                   636    36        2080   
+       clocks.obj                    636    0         32     
+       time.obj                      192    0         0      
+    +--+-----------------------------+------+---------+---------+
+       Total:                        1464   36        2112   
+                                                             
+    /home/pops/ti/simplelink_msp432p4_sdk_2_20_00_12/source/ti/devices/msp432p4xx/driverlib/ccs/msp432p4xx_driverlib.lib
+       interrupt.o                   236    8         464    
+       timer32.o                     22     0         0      
+       cpu.o                         16     0         0      
+    +--+-----------------------------+------+---------+---------+
+       Total:                        274    8         464    
+                                                             
+    /opt/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/lib/rtsv7M4_T_le_v4SPD16_eabi.lib
+       memory.c.obj                  768    0         24     
+       typeinfo.c.obj                36     127       0      
+       memcpy_t2.asm.obj             156    0         0      
+       memset_t2.asm.obj             122    0         0      
+       copy_decompress_lzss.c.obj    104    0         0      
+       autoinit.c.obj                96     0         0      
+       i_divt2.asm.obj               94     0         0      
+       boot_cortex_m.c.obj           56     0         0      
+       stdlib_typeinfo.cpp.obj       2      21        0      
+       strlen.c.obj                  20     0         0      
+       _lock.c.obj                   2      0         16     
+       copy_decompress_none.c.obj    14     0         0      
+       copy_zero_init.c.obj          12     0         0      
+       new.cpp.obj                   12     0         0      
+       pure_virt.c.obj               6      0         0      
+       error.c.obj                   4      0         0      
+       exit.c.obj                    4      0         0      
+       pre_init.c.obj                4      0         0      
+       div0.asm.obj                  2      0         0      
+    +--+-----------------------------+------+---------+---------+
+       Total:                        1514   148       40     
+                                                             
+       Heap:                         0      0         2048   
+       Stack:                        0      0         1024   
+       Linker Generated:             0      83        0      
+    +--+-----------------------------+------+---------+---------+
+       Grand Total:                  9760   1346      8344   
+
+
+LINKER GENERATED COPY TABLES
+
+__TI_cinit_table @ 00002b60 records: 3, size/record: 8, table size: 24
+	.data: load addr=00002b20, load size=0000001f bytes, run addr=20000e18, run size=00000034 bytes, compression=lzss
+	.bss: load addr=00002b50, load size=00000008 bytes, run addr=200000e8, run size=00000930 bytes, compression=zero_init
+	.vtable: load addr=00002b58, load size=00000008 bytes, run addr=20000000, run size=000000e8 bytes, compression=zero_init
+
+
+LINKER GENERATED HANDLER TABLE
+
+__TI_handler_table @ 00002b40 records: 3, size/record: 4, table size: 12
+	index: 0, handler: __TI_zero_init
+	index: 1, handler: __TI_decompress_lzss
+	index: 2, handler: __TI_decompress_none
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address   name                                                                                   
+-------   ----                                                                                   
+00002691  ADC14_IRQHandler                                                                       
+00002691  AES256_IRQHandler                                                                      
+00002691  BusFault_Handler                                                                       
+0000270b  C$$EXIT                                                                                
+00002691  COMP_E0_IRQHandler                                                                     
+00002691  COMP_E1_IRQHandler                                                                     
+00002693  CPU_cpsie                                                                              
+000026f3  CPU_wfi                                                                                
+00002691  CS_IRQHandler                                                                          
+00002691  DMA_ERR_IRQHandler                                                                     
+00002691  DMA_INT0_IRQHandler                                                                    
+00002691  DMA_INT1_IRQHandler                                                                    
+00002691  DMA_INT2_IRQHandler                                                                    
+00002691  DMA_INT3_IRQHandler                                                                    
+00002691  DebugMon_Handler                                                                       
+00002691  Default_Handler                                                                        
+00000c4d  EUSCIA0_IRQHandler                                                                     
+00000c4d  EUSCIA0_IRQHandler                                                                     
+00002691  EUSCIA1_IRQHandler                                                                     
+00002691  EUSCIA2_IRQHandler                                                                     
+00002691  EUSCIA3_IRQHandler                                                                     
+00002691  EUSCIB0_IRQHandler                                                                     
+00002691  EUSCIB1_IRQHandler                                                                     
+00002691  EUSCIB2_IRQHandler                                                                     
+00002691  EUSCIB3_IRQHandler                                                                     
+00002691  FLCTL_IRQHandler                                                                       
+00002691  FPU_IRQHandler                                                                         
+00002691  HardFault_Handler                                                                      
+00001b91  Interrupt_enableInterrupt                                                              
+0000256f  Interrupt_enableMaster                                                                 
+00002055  Interrupt_registerInterrupt                                                            
+00002691  MemManage_Handler                                                                      
+00002691  NMI_Handler                                                                            
+00002691  PCM_IRQHandler                                                                         
+00002691  PORT1_IRQHandler                                                                       
+00002691  PORT2_IRQHandler                                                                       
+00002691  PORT3_IRQHandler                                                                       
+00002691  PORT4_IRQHandler                                                                       
+00002691  PORT5_IRQHandler                                                                       
+00002691  PORT6_IRQHandler                                                                       
+00002691  PSS_IRQHandler                                                                         
+00002691  PendSV_Handler                                                                         
+00002691  RTC_C_IRQHandler                                                                       
+00002685  Reset_Handler                                                                          
+00002b1c  SHT$$INIT_ARRAY$$Base                                                                  
+00002b20  SHT$$INIT_ARRAY$$Limit                                                                 
+00002691  SVC_Handler                                                                            
+00000ae9  SysTick_Handler                                                                        
+00000ae9  SysTick_Handler                                                                        
+20000e48  SystemCoreClock                                                                        
+000000e5  SystemCoreClockUpdate                                                                  
+00000359  SystemInit                                                                             
+00002691  T32_INT1_IRQHandler                                                                    
+00002691  T32_INT2_IRQHandler                                                                    
+00002691  T32_INTC_IRQHandler                                                                    
+00002691  TA0_0_IRQHandler                                                                       
+00002691  TA0_N_IRQHandler                                                                       
+00002691  TA1_0_IRQHandler                                                                       
+00002691  TA1_N_IRQHandler                                                                       
+00002691  TA2_0_IRQHandler                                                                       
+00002691  TA2_N_IRQHandler                                                                       
+00002691  TA3_0_IRQHandler                                                                       
+00002691  TA3_N_IRQHandler                                                                       
+0000251d  Timer32_registerInterrupt                                                              
+00002691  UsageFault_Handler                                                                     
+4000480c  WDTCTL_SYM                                                                             
+00002691  WDT_A_IRQHandler                                                                       
+00002631  _ZN10__cxxabiv117__class_type_infoD0Ev                                                 
+000026f7  _ZN10__cxxabiv117__class_type_infoD1Ev                                                 
+000026f7  _ZN10__cxxabiv117__class_type_infoD2Ev                                                 
+0000263f  _ZN10__cxxabiv120__si_class_type_infoD0Ev                                              
+000026fb  _ZN10__cxxabiv120__si_class_type_infoD1Ev                                              
+000026fb  _ZN10__cxxabiv120__si_class_type_infoD2Ev                                              
+00000737  _ZN14rosserial_msgs20RequestParamResponse11deserializeEPh                              
+00002581  _ZN14rosserial_msgs20RequestParamResponse6getMD5Ev                                     
+00002591  _ZN14rosserial_msgs20RequestParamResponse7getTypeEv                                    
+000021a9  _ZN14rosserial_msgs20RequestParamResponseC1Ev                                          
+00001c11  _ZN14rosserial_msgs3Log11deserializeEPh                                                
+000025a1  _ZN14rosserial_msgs3Log6getMD5Ev                                                       
+000025b1  _ZN14rosserial_msgs3Log7getTypeEv                                                      
+000023fd  _ZN14rosserial_msgs3LogC1Ev                                                            
+00001251  _ZN14rosserial_msgs9TopicInfo11deserializeEPh                                          
+000025c1  _ZN14rosserial_msgs9TopicInfo6getMD5Ev                                                 
+000025d1  _ZN14rosserial_msgs9TopicInfo7getTypeEv                                                
+000021e5  _ZN14rosserial_msgs9TopicInfoC1Ev                                                      
+0000269f  _ZN15Msp432CHardware4initEv                                                            
+000026db  _ZN15Msp432CHardware4readEv                                                            
+00002535  _ZN15Msp432CHardware4timeEv                                                            
+0000264d  _ZN15Msp432CHardware5delayEj                                                           
+00002309  _ZN15Msp432CHardware5writeEPhi                                                         
+000026ab  _ZN15Msp432CHardwareC1Ev                                                               
+0000265b  _ZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EE11getHardwareEv           
+000010bb  _ZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EE15negotiateTopicsEv       
+000023a1  _ZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EE15requestSyncTimeEv       
+0000233d  _ZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EE3logEcPKc                 
+00001f35  _ZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EE6setNowERNS_4TimeE        
+000013e1  _ZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EE7publishEiPKNS_3MsgE      
+000023cf  _ZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EE8initNodeEv               
+0000255d  _ZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EE8logerrorEPKc             
+00000411  _ZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EE8spinOnceEv               
+00001d81  _ZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EE8syncTimeEPh              
+0000210d  _ZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EE9advertiseERNS_9PublisherE
+000025e1  _ZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EE9connectedEv              
+00001739  _ZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EEC1Ev                      
+000024d5  _ZN3ros15NodeHandleBase_C1Ev                                                           
+000026b7  _ZN3ros15NodeHandleBase_C2Ev                                                           
+00001981  _ZN3ros16normalizeSecNSecERjS0_                                                        
+00002221  _ZN3ros3Msg8arrToVarIjPhEEvRT_T0_                                                      
+00002371  _ZN3ros3Msg8varToArrIPhjEEvT_T0_                                                       
+000024ed  _ZN3ros3MsgC1Ev                                                                        
+000026c3  _ZN3ros3MsgC2Ev                                                                        
+000018fd  _ZN3ros4Time8fromNSecEi                                                                
+00002505  _ZN3ros4TimeC1Ev                                                                       
+00001955  _ZN3ros4TimemIERKNS_8DurationE                                                         
+00001929  _ZN3ros4TimepLERKNS_8DurationE                                                         
+00002669  _ZN3ros9Publisher15getEndpointTypeEv                                                   
+000024b5  _ZN3ros9Publisher7publishEPKNS_3MsgE                                                   
+0000244d  _ZN3ros9PublisherC1EPKcPNS_3MsgEi                                                      
+000019bd  _ZN8std_msgs4Time11deserializeEPh                                                      
+000025f1  _ZN8std_msgs4Time6getMD5Ev                                                             
+00002601  _ZN8std_msgs4Time7getTypeEv                                                            
+00002495  _ZN8std_msgs4TimeC1Ev                                                                  
+00001df1  _ZN8std_msgs6String11deserializeEPh                                                    
+00002611  _ZN8std_msgs6String6getMD5Ev                                                           
+00002621  _ZN8std_msgs6String7getTypeEv                                                          
+00002471  _ZN8std_msgs6StringC1Ev                                                                
+00000ec9  _ZNK14rosserial_msgs20RequestParamResponse9serializeEPh                                
+000020b1  _ZNK14rosserial_msgs3Log9serializeEPh                                                  
+0000150d  _ZNK14rosserial_msgs9TopicInfo9serializeEPh                                            
+00001af7  _ZNK8std_msgs4Time9serializeEPh                                                        
+0000215f  _ZNK8std_msgs6String9serializeEPh                                                      
+000009cf  _ZNSt9type_infoD1Ev                                                                    
+000009cf  _ZNSt9type_infoD2Ev                                                                    
+0000270b  _ZSt17__throw_bad_allocv                                                               
+00002a90  _ZTIN10__cxxabiv117__class_type_infoE                                                  
+00002a9c  _ZTIN10__cxxabiv120__si_class_type_infoE                                               
+00002aa8  _ZTIN14rosserial_msgs20RequestParamResponseE                                           
+00002ab4  _ZTIN14rosserial_msgs3LogE                                                             
+00002ac0  _ZTIN14rosserial_msgs9TopicInfoE                                                       
+00002acc  _ZTIN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EEE                       
+00002afc  _ZTIN3ros15NodeHandleBase_E                                                            
+00002b04  _ZTIN3ros3MsgE                                                                         
+00002ad8  _ZTIN8std_msgs4TimeE                                                                   
+00002ae4  _ZTIN8std_msgs6StringE                                                                 
+00002b0c  _ZTISt9type_info                                                                       
+000027f8  _ZTSN10__cxxabiv117__class_type_infoE                                                  
+000027af  _ZTSN10__cxxabiv120__si_class_type_infoE                                               
+00002786  _ZTSN14rosserial_msgs20RequestParamResponseE                                           
+000029bc  _ZTSN14rosserial_msgs3LogE                                                             
+000028bf  _ZTSN14rosserial_msgs9TopicInfoE                                                       
+00002710  _ZTSN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EEE                       
+00002911  _ZTSN3ros15NodeHandleBase_E                                                            
+00002af0  _ZTSN3ros3MsgE                                                                         
+00002a22  _ZTSN8std_msgs4TimeE                                                                   
+00002a0f  _ZTSN8std_msgs6StringE                                                                 
+00002a81  _ZTSSt9type_info                                                                       
+00002a44  _ZTVN10__cxxabiv117__class_type_infoE                                                  
+00002a54  _ZTVN10__cxxabiv120__si_class_type_infoE                                               
+0000292c  _ZTVN14rosserial_msgs20RequestParamResponseE                                           
+00002944  _ZTVN14rosserial_msgs3LogE                                                             
+0000295c  _ZTVN14rosserial_msgs9TopicInfoE                                                       
+000029d4  _ZTVN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EEE                       
+000029e8  _ZTVN3ros15NodeHandleBase_E                                                            
+00002974  _ZTVN3ros3MsgE                                                                         
+0000298c  _ZTVN8std_msgs4TimeE                                                                   
+000029a4  _ZTVN8std_msgs6StringE                                                                 
+0000281a  _ZZN14rosserial_msgs20RequestParamResponse6getMD5EvEs                                  
+0000283b  _ZZN14rosserial_msgs3Log6getMD5EvEs                                                    
+000029fc  _ZZN14rosserial_msgs3Log7getTypeEvEs                                                   
+00002929  _ZZN14rosserial_msgs3LogC1EvEs                                                         
+0000285c  _ZZN14rosserial_msgs9TopicInfo6getMD5EvEs                                              
+000028f8  _ZZN14rosserial_msgs9TopicInfo7getTypeEvEs                                             
+0000292a  _ZZN14rosserial_msgs9TopicInfoC1EvEs                                                   
+0000274d  _ZZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EE7publishEiPKNS_3MsgEEs   
+0000287d  _ZZN8std_msgs4Time6getMD5EvEs                                                          
+00002a73  _ZZN8std_msgs4Time7getTypeEvEs                                                         
+0000289e  _ZZN8std_msgs6String6getMD5EvEs                                                        
+00002a33  _ZZN8std_msgs6String7getTypeEvEs                                                       
+0000292b  _ZZN8std_msgs6StringC1EvEs                                                             
+000026e5  _ZdlPv                                                                                 
+000026ff  _ZdlPvj                                                                                
+20010000  __STACK_END                                                                            
+00000200  __STACK_SIZE                                                                           
+00000400  __SYSMEM_SIZE                                                                          
+00002b60  __TI_CINIT_Base                                                                        
+00002b78  __TI_CINIT_Limit                                                                       
+00002b40  __TI_Handler_Table_Base                                                                
+00002b4c  __TI_Handler_Table_Limit                                                               
+00001f95  __TI_auto_init_nobinit                                                                 
+00001ecd  __TI_decompress_lzss                                                                   
+00002677  __TI_decompress_none                                                                   
+ffffffff  __TI_pprof_out_hndl                                                                    
+ffffffff  __TI_prof_data_size                                                                    
+ffffffff  __TI_prof_data_start                                                                   
+00000000  __TI_static_base__                                                                     
+000026cf  __TI_zero_init                                                                         
+00002703  __abort_execution                                                                      
+00001ff5  __aeabi_idiv                                                                           
+00001e5f  __aeabi_idiv0                                                                          
+00001ff5  __aeabi_idivmod                                                                        
+00001e5f  __aeabi_ldiv0                                                                          
+00001c8f  __aeabi_memclr                                                                         
+00001c8f  __aeabi_memclr4                                                                        
+00001c8f  __aeabi_memclr8                                                                        
+00001a5b  __aeabi_memcpy                                                                         
+00001a5b  __aeabi_memcpy4                                                                        
+00001a5b  __aeabi_memcpy8                                                                        
+00001c91  __aeabi_memset                                                                         
+00001c91  __aeabi_memset4                                                                        
+00001c91  __aeabi_memset8                                                                        
+ffffffff  __binit__                                                                              
+ffffffff  __c_args__                                                                             
+000026ed  __cxa_pure_virtual                                                                     
+UNDEFED   __mpu_init                                                                             
+2000fe00  __stack                                                                                
+00001eb3  __sti___15_hello_world_cpp_nh_                                                         
+00002299  _c_int00_noargs                                                                        
+00000db5  _flush                                                                                 
+00000e75  _gotoLPM0                                                                              
+20000e40  _lock                                                                                  
+00001623  _nop                                                                                   
+00000dc1  _peek                                                                                  
+20000a14  _periodicSvc                                                                           
+00000d63  _rxChar                                                                                
+00000d97  _rxReady                                                                               
+00000b37  _sleepTimer                                                                            
+20000a18  _sys_memory                                                                            
+UNDEFED   _system_post_cinit                                                                     
+00002707  _system_pre_init                                                                       
+00000cc3  _txChar                                                                                
+20000614  _uartRxBuffer                                                                          
+20000e18  _uartRxHead                                                                            
+20000e1c  _uartRxTail                                                                            
+20000814  _uartTxBuffer                                                                          
+20000e20  _uartTxHead                                                                            
+20000e24  _uartTxTail                                                                            
+20000e44  _unlock                                                                                
+0000270b  abort                                                                                  
+ffffffff  binit                                                                                  
+00001825  free                                                                                   
+20000000  g_pfnRAMVectors                                                                        
+000009e1  initializeClocks                                                                       
+000009d1  initializePeriodicSvc                                                                  
+00000def  initializeUart                                                                         
+00000000  interruptVectors                                                                       
+00001e61  main                                                                                   
+00001d09  malloc                                                                                 
+00001a5b  memcpy                                                                                 
+00001c97  memset                                                                                 
+000022d1  minit                                                                                  
+00000b45  mySleep                                                                                
+00000ba9  mySleepMs                                                                              
+200000e8  nh_                                                                                    
+00001625  realloc                                                                                
+00002549  strlen                                                                                 
+20000e34  tickCount                                                                              
+000027d4  uartConfig                                                                             
+00000bff  waitForInterrupt                                                                       
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address   name                                                                                   
+-------   ----                                                                                   
+00000000  __TI_static_base__                                                                     
+00000000  interruptVectors                                                                       
+000000e5  SystemCoreClockUpdate                                                                  
+00000200  __STACK_SIZE                                                                           
+00000359  SystemInit                                                                             
+00000400  __SYSMEM_SIZE                                                                          
+00000411  _ZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EE8spinOnceEv               
+00000737  _ZN14rosserial_msgs20RequestParamResponse11deserializeEPh                              
+000009cf  _ZNSt9type_infoD1Ev                                                                    
+000009cf  _ZNSt9type_infoD2Ev                                                                    
+000009d1  initializePeriodicSvc                                                                  
+000009e1  initializeClocks                                                                       
+00000ae9  SysTick_Handler                                                                        
+00000ae9  SysTick_Handler                                                                        
+00000b37  _sleepTimer                                                                            
+00000b45  mySleep                                                                                
+00000ba9  mySleepMs                                                                              
+00000bff  waitForInterrupt                                                                       
+00000c4d  EUSCIA0_IRQHandler                                                                     
+00000c4d  EUSCIA0_IRQHandler                                                                     
+00000cc3  _txChar                                                                                
+00000d63  _rxChar                                                                                
+00000d97  _rxReady                                                                               
+00000db5  _flush                                                                                 
+00000dc1  _peek                                                                                  
+00000def  initializeUart                                                                         
+00000e75  _gotoLPM0                                                                              
+00000ec9  _ZNK14rosserial_msgs20RequestParamResponse9serializeEPh                                
+000010bb  _ZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EE15negotiateTopicsEv       
+00001251  _ZN14rosserial_msgs9TopicInfo11deserializeEPh                                          
+000013e1  _ZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EE7publishEiPKNS_3MsgE      
+0000150d  _ZNK14rosserial_msgs9TopicInfo9serializeEPh                                            
+00001623  _nop                                                                                   
+00001625  realloc                                                                                
+00001739  _ZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EEC1Ev                      
+00001825  free                                                                                   
+000018fd  _ZN3ros4Time8fromNSecEi                                                                
+00001929  _ZN3ros4TimepLERKNS_8DurationE                                                         
+00001955  _ZN3ros4TimemIERKNS_8DurationE                                                         
+00001981  _ZN3ros16normalizeSecNSecERjS0_                                                        
+000019bd  _ZN8std_msgs4Time11deserializeEPh                                                      
+00001a5b  __aeabi_memcpy                                                                         
+00001a5b  __aeabi_memcpy4                                                                        
+00001a5b  __aeabi_memcpy8                                                                        
+00001a5b  memcpy                                                                                 
+00001af7  _ZNK8std_msgs4Time9serializeEPh                                                        
+00001b91  Interrupt_enableInterrupt                                                              
+00001c11  _ZN14rosserial_msgs3Log11deserializeEPh                                                
+00001c8f  __aeabi_memclr                                                                         
+00001c8f  __aeabi_memclr4                                                                        
+00001c8f  __aeabi_memclr8                                                                        
+00001c91  __aeabi_memset                                                                         
+00001c91  __aeabi_memset4                                                                        
+00001c91  __aeabi_memset8                                                                        
+00001c97  memset                                                                                 
+00001d09  malloc                                                                                 
+00001d81  _ZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EE8syncTimeEPh              
+00001df1  _ZN8std_msgs6String11deserializeEPh                                                    
+00001e5f  __aeabi_idiv0                                                                          
+00001e5f  __aeabi_ldiv0                                                                          
+00001e61  main                                                                                   
+00001eb3  __sti___15_hello_world_cpp_nh_                                                         
+00001ecd  __TI_decompress_lzss                                                                   
+00001f35  _ZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EE6setNowERNS_4TimeE        
+00001f95  __TI_auto_init_nobinit                                                                 
+00001ff5  __aeabi_idiv                                                                           
+00001ff5  __aeabi_idivmod                                                                        
+00002055  Interrupt_registerInterrupt                                                            
+000020b1  _ZNK14rosserial_msgs3Log9serializeEPh                                                  
+0000210d  _ZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EE9advertiseERNS_9PublisherE
+0000215f  _ZNK8std_msgs6String9serializeEPh                                                      
+000021a9  _ZN14rosserial_msgs20RequestParamResponseC1Ev                                          
+000021e5  _ZN14rosserial_msgs9TopicInfoC1Ev                                                      
+00002221  _ZN3ros3Msg8arrToVarIjPhEEvRT_T0_                                                      
+00002299  _c_int00_noargs                                                                        
+000022d1  minit                                                                                  
+00002309  _ZN15Msp432CHardware5writeEPhi                                                         
+0000233d  _ZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EE3logEcPKc                 
+00002371  _ZN3ros3Msg8varToArrIPhjEEvT_T0_                                                       
+000023a1  _ZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EE15requestSyncTimeEv       
+000023cf  _ZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EE8initNodeEv               
+000023fd  _ZN14rosserial_msgs3LogC1Ev                                                            
+0000244d  _ZN3ros9PublisherC1EPKcPNS_3MsgEi                                                      
+00002471  _ZN8std_msgs6StringC1Ev                                                                
+00002495  _ZN8std_msgs4TimeC1Ev                                                                  
+000024b5  _ZN3ros9Publisher7publishEPKNS_3MsgE                                                   
+000024d5  _ZN3ros15NodeHandleBase_C1Ev                                                           
+000024ed  _ZN3ros3MsgC1Ev                                                                        
+00002505  _ZN3ros4TimeC1Ev                                                                       
+0000251d  Timer32_registerInterrupt                                                              
+00002535  _ZN15Msp432CHardware4timeEv                                                            
+00002549  strlen                                                                                 
+0000255d  _ZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EE8logerrorEPKc             
+0000256f  Interrupt_enableMaster                                                                 
+00002581  _ZN14rosserial_msgs20RequestParamResponse6getMD5Ev                                     
+00002591  _ZN14rosserial_msgs20RequestParamResponse7getTypeEv                                    
+000025a1  _ZN14rosserial_msgs3Log6getMD5Ev                                                       
+000025b1  _ZN14rosserial_msgs3Log7getTypeEv                                                      
+000025c1  _ZN14rosserial_msgs9TopicInfo6getMD5Ev                                                 
+000025d1  _ZN14rosserial_msgs9TopicInfo7getTypeEv                                                
+000025e1  _ZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EE9connectedEv              
+000025f1  _ZN8std_msgs4Time6getMD5Ev                                                             
+00002601  _ZN8std_msgs4Time7getTypeEv                                                            
+00002611  _ZN8std_msgs6String6getMD5Ev                                                           
+00002621  _ZN8std_msgs6String7getTypeEv                                                          
+00002631  _ZN10__cxxabiv117__class_type_infoD0Ev                                                 
+0000263f  _ZN10__cxxabiv120__si_class_type_infoD0Ev                                              
+0000264d  _ZN15Msp432CHardware5delayEj                                                           
+0000265b  _ZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EE11getHardwareEv           
+00002669  _ZN3ros9Publisher15getEndpointTypeEv                                                   
+00002677  __TI_decompress_none                                                                   
+00002685  Reset_Handler                                                                          
+00002691  ADC14_IRQHandler                                                                       
+00002691  AES256_IRQHandler                                                                      
+00002691  BusFault_Handler                                                                       
+00002691  COMP_E0_IRQHandler                                                                     
+00002691  COMP_E1_IRQHandler                                                                     
+00002691  CS_IRQHandler                                                                          
+00002691  DMA_ERR_IRQHandler                                                                     
+00002691  DMA_INT0_IRQHandler                                                                    
+00002691  DMA_INT1_IRQHandler                                                                    
+00002691  DMA_INT2_IRQHandler                                                                    
+00002691  DMA_INT3_IRQHandler                                                                    
+00002691  DebugMon_Handler                                                                       
+00002691  Default_Handler                                                                        
+00002691  EUSCIA1_IRQHandler                                                                     
+00002691  EUSCIA2_IRQHandler                                                                     
+00002691  EUSCIA3_IRQHandler                                                                     
+00002691  EUSCIB0_IRQHandler                                                                     
+00002691  EUSCIB1_IRQHandler                                                                     
+00002691  EUSCIB2_IRQHandler                                                                     
+00002691  EUSCIB3_IRQHandler                                                                     
+00002691  FLCTL_IRQHandler                                                                       
+00002691  FPU_IRQHandler                                                                         
+00002691  HardFault_Handler                                                                      
+00002691  MemManage_Handler                                                                      
+00002691  NMI_Handler                                                                            
+00002691  PCM_IRQHandler                                                                         
+00002691  PORT1_IRQHandler                                                                       
+00002691  PORT2_IRQHandler                                                                       
+00002691  PORT3_IRQHandler                                                                       
+00002691  PORT4_IRQHandler                                                                       
+00002691  PORT5_IRQHandler                                                                       
+00002691  PORT6_IRQHandler                                                                       
+00002691  PSS_IRQHandler                                                                         
+00002691  PendSV_Handler                                                                         
+00002691  RTC_C_IRQHandler                                                                       
+00002691  SVC_Handler                                                                            
+00002691  T32_INT1_IRQHandler                                                                    
+00002691  T32_INT2_IRQHandler                                                                    
+00002691  T32_INTC_IRQHandler                                                                    
+00002691  TA0_0_IRQHandler                                                                       
+00002691  TA0_N_IRQHandler                                                                       
+00002691  TA1_0_IRQHandler                                                                       
+00002691  TA1_N_IRQHandler                                                                       
+00002691  TA2_0_IRQHandler                                                                       
+00002691  TA2_N_IRQHandler                                                                       
+00002691  TA3_0_IRQHandler                                                                       
+00002691  TA3_N_IRQHandler                                                                       
+00002691  UsageFault_Handler                                                                     
+00002691  WDT_A_IRQHandler                                                                       
+00002693  CPU_cpsie                                                                              
+0000269f  _ZN15Msp432CHardware4initEv                                                            
+000026ab  _ZN15Msp432CHardwareC1Ev                                                               
+000026b7  _ZN3ros15NodeHandleBase_C2Ev                                                           
+000026c3  _ZN3ros3MsgC2Ev                                                                        
+000026cf  __TI_zero_init                                                                         
+000026db  _ZN15Msp432CHardware4readEv                                                            
+000026e5  _ZdlPv                                                                                 
+000026ed  __cxa_pure_virtual                                                                     
+000026f3  CPU_wfi                                                                                
+000026f7  _ZN10__cxxabiv117__class_type_infoD1Ev                                                 
+000026f7  _ZN10__cxxabiv117__class_type_infoD2Ev                                                 
+000026fb  _ZN10__cxxabiv120__si_class_type_infoD1Ev                                              
+000026fb  _ZN10__cxxabiv120__si_class_type_infoD2Ev                                              
+000026ff  _ZdlPvj                                                                                
+00002703  __abort_execution                                                                      
+00002707  _system_pre_init                                                                       
+0000270b  C$$EXIT                                                                                
+0000270b  _ZSt17__throw_bad_allocv                                                               
+0000270b  abort                                                                                  
+00002710  _ZTSN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EEE                       
+0000274d  _ZZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EE7publishEiPKNS_3MsgEEs   
+00002786  _ZTSN14rosserial_msgs20RequestParamResponseE                                           
+000027af  _ZTSN10__cxxabiv120__si_class_type_infoE                                               
+000027d4  uartConfig                                                                             
+000027f8  _ZTSN10__cxxabiv117__class_type_infoE                                                  
+0000281a  _ZZN14rosserial_msgs20RequestParamResponse6getMD5EvEs                                  
+0000283b  _ZZN14rosserial_msgs3Log6getMD5EvEs                                                    
+0000285c  _ZZN14rosserial_msgs9TopicInfo6getMD5EvEs                                              
+0000287d  _ZZN8std_msgs4Time6getMD5EvEs                                                          
+0000289e  _ZZN8std_msgs6String6getMD5EvEs                                                        
+000028bf  _ZTSN14rosserial_msgs9TopicInfoE                                                       
+000028f8  _ZZN14rosserial_msgs9TopicInfo7getTypeEvEs                                             
+00002911  _ZTSN3ros15NodeHandleBase_E                                                            
+00002929  _ZZN14rosserial_msgs3LogC1EvEs                                                         
+0000292a  _ZZN14rosserial_msgs9TopicInfoC1EvEs                                                   
+0000292b  _ZZN8std_msgs6StringC1EvEs                                                             
+0000292c  _ZTVN14rosserial_msgs20RequestParamResponseE                                           
+00002944  _ZTVN14rosserial_msgs3LogE                                                             
+0000295c  _ZTVN14rosserial_msgs9TopicInfoE                                                       
+00002974  _ZTVN3ros3MsgE                                                                         
+0000298c  _ZTVN8std_msgs4TimeE                                                                   
+000029a4  _ZTVN8std_msgs6StringE                                                                 
+000029bc  _ZTSN14rosserial_msgs3LogE                                                             
+000029d4  _ZTVN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EEE                       
+000029e8  _ZTVN3ros15NodeHandleBase_E                                                            
+000029fc  _ZZN14rosserial_msgs3Log7getTypeEvEs                                                   
+00002a0f  _ZTSN8std_msgs6StringE                                                                 
+00002a22  _ZTSN8std_msgs4TimeE                                                                   
+00002a33  _ZZN8std_msgs6String7getTypeEvEs                                                       
+00002a44  _ZTVN10__cxxabiv117__class_type_infoE                                                  
+00002a54  _ZTVN10__cxxabiv120__si_class_type_infoE                                               
+00002a73  _ZZN8std_msgs4Time7getTypeEvEs                                                         
+00002a81  _ZTSSt9type_info                                                                       
+00002a90  _ZTIN10__cxxabiv117__class_type_infoE                                                  
+00002a9c  _ZTIN10__cxxabiv120__si_class_type_infoE                                               
+00002aa8  _ZTIN14rosserial_msgs20RequestParamResponseE                                           
+00002ab4  _ZTIN14rosserial_msgs3LogE                                                             
+00002ac0  _ZTIN14rosserial_msgs9TopicInfoE                                                       
+00002acc  _ZTIN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EEE                       
+00002ad8  _ZTIN8std_msgs4TimeE                                                                   
+00002ae4  _ZTIN8std_msgs6StringE                                                                 
+00002af0  _ZTSN3ros3MsgE                                                                         
+00002afc  _ZTIN3ros15NodeHandleBase_E                                                            
+00002b04  _ZTIN3ros3MsgE                                                                         
+00002b0c  _ZTISt9type_info                                                                       
+00002b1c  SHT$$INIT_ARRAY$$Base                                                                  
+00002b20  SHT$$INIT_ARRAY$$Limit                                                                 
+00002b40  __TI_Handler_Table_Base                                                                
+00002b4c  __TI_Handler_Table_Limit                                                               
+00002b60  __TI_CINIT_Base                                                                        
+00002b78  __TI_CINIT_Limit                                                                       
+20000000  g_pfnRAMVectors                                                                        
+200000e8  nh_                                                                                    
+20000614  _uartRxBuffer                                                                          
+20000814  _uartTxBuffer                                                                          
+20000a14  _periodicSvc                                                                           
+20000a18  _sys_memory                                                                            
+20000e18  _uartRxHead                                                                            
+20000e1c  _uartRxTail                                                                            
+20000e20  _uartTxHead                                                                            
+20000e24  _uartTxTail                                                                            
+20000e34  tickCount                                                                              
+20000e40  _lock                                                                                  
+20000e44  _unlock                                                                                
+20000e48  SystemCoreClock                                                                        
+2000fe00  __stack                                                                                
+20010000  __STACK_END                                                                            
+4000480c  WDTCTL_SYM                                                                             
+ffffffff  __TI_pprof_out_hndl                                                                    
+ffffffff  __TI_prof_data_size                                                                    
+ffffffff  __TI_prof_data_start                                                                   
+ffffffff  __binit__                                                                              
+ffffffff  __c_args__                                                                             
+ffffffff  binit                                                                                  
+UNDEFED   __mpu_init                                                                             
+UNDEFED   _system_post_cinit                                                                     
+
+[258 symbols]

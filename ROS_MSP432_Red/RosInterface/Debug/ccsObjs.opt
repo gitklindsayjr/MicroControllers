@@ -1,0 +1,1 @@
+"./ccs/startup_msp432p401r_ccs.obj" "./ccs/system_msp432p401r.obj" "./src/ros_msp432_io.obj" "./src/test_ros_msp432_interface.obj" "../msp432p401r.cmd" -lmsp432p4xx_driverlib.lib -lRosMspHwdLib.lib 

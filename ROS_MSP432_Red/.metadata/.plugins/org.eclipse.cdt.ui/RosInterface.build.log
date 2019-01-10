@@ -1,0 +1,13 @@
+
+**** Clean-only build of configuration Debug for project RosInterface ****
+
+/opt/ti/ccsv8/utils/bin/gmake -k -j 8 clean -O 
+ 
+rm -rf  "RosInterface.hex"  "RosInterface.out" 
+rm -rf "ccs/startup_msp432p401r_ccs.obj" "ccs/system_msp432p401r.obj" "src/ros_msp432_io.obj" "src/test_ros_msp432_interface.obj" 
+rm -rf "ccs/startup_msp432p401r_ccs.d" "ccs/system_msp432p401r.d" 
+rm -rf "src/ros_msp432_io.d" "src/test_ros_msp432_interface.d" 
+Finished clean
+ 
+
+**** Build Finished ****

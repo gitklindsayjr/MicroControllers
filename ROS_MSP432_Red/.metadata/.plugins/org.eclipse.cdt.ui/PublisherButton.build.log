@@ -1,0 +1,25 @@
+
+**** Build of configuration Debug for project PublisherButton ****
+
+/opt/ti/ccsv8/utils/bin/gmake -k -j 8 all -O 
+ 
+Building file: "../src/buttons.cpp"
+Invoking: ARM Compiler
+"/opt/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/pops/ti/RosLib" --include_path="/home/pops/ti/simplelink_msp432p4_sdk_2_20_00_12/source" --include_path="/home/pops/MicroControllers/ROS_MSP432_Red/RosMspHardware/src" --include_path="/opt/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include" --include_path="/opt/ti/ccsv8/ccs_base/arm/include" --include_path="/opt/ti/ccsv8/ccs_base/arm/include/CMSIS" --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="src/buttons.d_raw" --obj_directory="src"  "../src/buttons.cpp"
+ 
+>> Compilation failure
+src/subdir_rules.mk:7: recipe for target 'src/buttons.obj' failed
+"/home/pops/ti/RosLib/rosserial_msgs/TopicInfo.h", line 52: remark #1542-D: (ULP 12.1) Detected memcpy() and recommend using DMA instead if greater than 100 words being transferred
+"/home/pops/ti/RosLib/rosserial_msgs/TopicInfo.h", line 57: remark #1542-D: (ULP 12.1) Detected memcpy() and recommend using DMA instead if greater than 100 words being transferred
+"/home/pops/ti/RosLib/rosserial_msgs/TopicInfo.h", line 62: remark #1542-D: (ULP 12.1) Detected memcpy() and recommend using DMA instead if greater than 100 words being transferred
+"/home/pops/ti/RosLib/rosserial_msgs/Log.h", line 39: remark #1542-D: (ULP 12.1) Detected memcpy() and recommend using DMA instead if greater than 100 words being transferred
+"/home/pops/ti/RosLib/rosserial_msgs/RequestParam.h", line 30: remark #1542-D: (ULP 12.1) Detected memcpy() and recommend using DMA instead if greater than 100 words being transferred
+"/home/pops/ti/RosLib/rosserial_msgs/RequestParam.h", line 124: remark #1542-D: (ULP 12.1) Detected memcpy() and recommend using DMA instead if greater than 100 words being transferred
+"/home/pops/ti/RosLib/rosserial_msgs/RequestParam.h", line 124: remark #1542-D: (ULP 12.1) Detected memcpy() and recommend using DMA instead if greater than 100 words being transferred
+"../src/Button.h", line 13: fatal error #1965: cannot open source file "ros/types.h"
+1 catastrophic error detected in the compilation of "../src/buttons.cpp".
+Compilation terminated.
+gmake: *** [src/buttons.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****

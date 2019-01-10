@@ -1,0 +1,13 @@
+
+**** Clean-only build of configuration Debug for project Joystick ****
+
+/opt/ti/ccsv8/utils/bin/gmake -k -j 8 clean -O 
+ 
+rm -rf  "Joystick.hex"  "Joystick.out" 
+rm -rf "ccs/startup_msp432p401r_ccs.obj" "ccs/system_msp432p401r.obj" "src/joystick.obj" "src/led.obj" 
+rm -rf "ccs/startup_msp432p401r_ccs.d" "ccs/system_msp432p401r.d" "src/led.d" 
+rm -rf "src/joystick.d" 
+Finished clean
+ 
+
+**** Build Finished ****

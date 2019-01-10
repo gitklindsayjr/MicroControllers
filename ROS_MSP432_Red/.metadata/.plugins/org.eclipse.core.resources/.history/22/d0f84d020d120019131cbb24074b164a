@@ -1,0 +1,8 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+USER_OBJS :=
+
+LIBS := -lRosMspHardware.lib -lmsp432p4xx_driverlib.lib -llibc.a
+

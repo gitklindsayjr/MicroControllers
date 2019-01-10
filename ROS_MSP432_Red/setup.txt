@@ -1,0 +1,43 @@
+
+1. This repository is setup to be used with Code Composer Studio 8.30 "CCSV8" under Ubuntu 16.04.  The following directories were used in CCSV8 and need to be changed based on your home directory/environment.  The directorys are ti's Simplelink driver libray, and a version of the ros library for ti devices.
+
+2. The ccsv8 installation directory that was used was: /opt/ti/ccsv8
+
+3. The ti driver library was installed in ny home directory as: ~/ti/simplelink_msp432p4_sdk_2_20_00_12
+
+4. The workspace name used was: ~/MicroControllers/ROS_MSP432_Red
+   The ros libary used was:     ~/ti/RosLib
+
+5. The following linked resources need to be added to your workspace as follows:
+	Window->Preferences->General->Workspace->Linked Resources->Edit
+	Note: Path must be absolute, replace xxxuser
+
+	Select and Edit these variables, replacing "pops" with your "username"
+	
+	Ros MSP432, variables
+	------------------------------------------------------------------------------------------
+	ROS_LIB			/opt/ros/kinetic/include
+	ROS_TI_LIB		/home/xxxx/ti/RosLib
+	ROS_MSP_HWD_LIB 	/home/xxxx/MicroControllers/ROS_MSP432_Red/RosMspHwdLib/Debug
+	ROS_MSP_HWD_SRC 	/home/xxxx/MicroControllers/ROS_MSP432_Red/RosMspHwdLib/src
+	SIMPLELINK		/home/xxxx/ti/simplelink_msp432p4_sdk_2_20_00_12/source
+	MSP432_DRIVERLIB_LIB	/home/xxxx/ti/simplelink_msp432p4_sdk_2_20_00_12/source/ti/devices/msp432p4xx/driverlib/ccs
+	MSP432_DRIVERLIB_SRC	/home/xxxx/ti/simplelink_msp432p4_sdk_2_20_00_12/source/ti/devices/msp432p4xx/driverlib
+
+6. For the "RosMspHwdLib" project update the include files to reflect your environmental variables as follows:
+	RosMspHardware->Properites->ARM Compiler->Include Options
+	Variables:	SIMPLELINK, ROS_TI_LIB, ROS_MSP_HWD_SRC, MSP432_DRIVERLIB_SRC
+	RosMspHardware->Properites->ARM Compiler->Predefined Symbols
+	Pre-Define NAME: LED_HEARTBEAT, LED_RX_LINK, LED_TX_BLINK, __MSP432P401R__ <- maybe different for you
+
+7. Repeat the basic process as in step 6 but add other include files, example:
+	PublisherHelloWorld->Properties->MSP432 Compiler->Include Options
+	Variables:	SIMPLELINK, ROS_TI_LIB, ROS_MSP_HWD_SRC
+	Symbols:	__MSP432P401R__ <- maybe different for you
+
+8. The linker paths need to be set as follows:
+	PublisherHelloWorld->Properties->MSP432 LINKER->File Search Path:
+	Variables: 	MSP432_DRIVERLIB_LIB, ROS_MSP_HWD_LIB
+	Library files:	msp432p4xx_driverlib.lib, RosMspHwdLib.lib
+
+	

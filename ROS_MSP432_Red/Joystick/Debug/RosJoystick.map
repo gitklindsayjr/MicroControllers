@@ -1,0 +1,1165 @@
+******************************************************************************
+                  TI ARM Linker Unix v17.3.0                   
+******************************************************************************
+>> Linked Wed Apr 19 10:08:11 2017
+
+OUTPUT FILE NAME:   <RosJoystick.out>
+ENTRY POINT SYMBOL: "_c_int00"  address: 00004231
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  MAIN                  00000000   00040000  0000536a  0003ac96  R  X
+  INFO                  00200000   00004000  00000000  00004000  R  X
+  SRAM_CODE             01000000   00010000  00000bee  0000f412  RW X
+  SRAM_DATA             20000000   00010000  00000bee  0000f412  RW  
+
+
+SEGMENT ALLOCATION MAP
+
+run origin  load origin   length   init length attrs members
+----------  ----------- ---------- ----------- ----- -------
+00000000    00000000    00005370   00005370    r-x
+  00000000    00000000    000000e4   000000e4    r-- .intvecs
+  000000e4    000000e4    00004ac6   00004ac6    r-x .text
+  00004bac    00004bac    0000075c   0000075c    r-- .const
+  00005308    00005308    00000004   00000004    r-- .init_array
+  00005310    00005310    00000060   00000060    r-- .cinit
+20000000    20000000    000009f4   00000000    rw-
+  20000000    20000000    000000e4   00000000    rw- .vtable
+  200000e4    200000e4    000004be   00000000    rw- .bss
+  200005a8    200005a8    00000400   00000000    rw- .sysmem
+  200009a8    200009a8    0000004c   00000000    rw- .data
+2000fe00    2000fe00    00000200   00000000    rw-
+  2000fe00    2000fe00    00000200   00000000    rw- .stack
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.intvecs   0    00000000    000000e4     
+                  00000000    000000e4     startup_msp432p401r_ccs.obj (.intvecs:retain)
+
+.binit     0    00000000    00000000     
+
+.text      0    000000e4    00004ac6     
+                  000000e4    00001142     rtsv7M4_T_le_v4SPD16_eabi.lib : _printfi.obj (.text)
+                  00001226    00000002                                   : i_div0.obj (.text)
+                  00001228    000003d0                                   : memory.obj (.text)
+                  000015f8    0000032c     system_msp432p401r.obj (.text)
+                  00001924    00000326     joystick.obj (.text:_ZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EE8spinOnceEv)
+                  00001c4a    00000298     joystick.obj (.text:_ZN14rosserial_msgs20RequestParamResponse11deserializeEPh)
+                  00001ee2    000001f4     rtsv7M4_T_le_v4SPD16_eabi.lib : ull_div_t2.obj (.text)
+                  000020d6    000001f2     joystick.obj (.text:_ZNK14rosserial_msgs20RequestParamResponse9serializeEPh)
+                  000022c8    000001ec     clocks.obj (.text)
+                  000024b4    000001e8     uart.obj (.text)
+                  0000269c    000001cc     joystick.obj (.text:_ZN11sensor_msgs3Joy11deserializeEPh)
+                  00002868    000001b6     rtsv7M4_T_le_v4SPD16_eabi.lib : fd_add_t2.obj (.text)
+                  00002a1e    00000196     joystick.obj (.text:_ZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EE15negotiateTopicsEv)
+                  00002bb4    00000190     joystick.obj (.text:_ZN14rosserial_msgs9TopicInfo11deserializeEPh)
+                  00002d44    00000178     joystick.obj (.text)
+                  00002ebc    0000016c     joystick.obj (.text:_ZNK11sensor_msgs3Joy9serializeEPh)
+                  00003028    00000140     joystick.obj (.text:_ZN8std_msgs6Header11deserializeEPh)
+                  00003168    00000136     rtsv7M4_T_le_v4SPD16_eabi.lib : fd_div_t2.obj (.text)
+                  0000329e    00000002                                   : mpu_init.obj (.text)
+                  000032a0    0000012c     joystick.obj (.text:_ZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EE7publishEiPKNS_3MsgE)
+                  000033cc    00000116     joystick.obj (.text:_ZNK14rosserial_msgs9TopicInfo9serializeEPh)
+                  000034e2    00000114     joystick.obj (.text:_ZNK8std_msgs6Header9serializeEPh)
+                  000035f6    000000fc     rtsv7M4_T_le_v4SPD16_eabi.lib : fd_mul_t2.obj (.text)
+                  000036f2    00000002                                   : startup.obj (.text)
+                  000036f4    000000fc                                   : s_scalbn.obj (.text)
+                  000037f0    000000ec     joystick.obj (.text:_ZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EEC1Ev)
+                  000038dc    000000c0     time.obj (.text)
+                  0000399c    000000bc     rtsv7M4_T_le_v4SPD16_eabi.lib : typeinfo_.obj (.text)
+                  00003a58    0000009e     joystick.obj (.text:_ZN8std_msgs4Time11deserializeEPh)
+                  00003af6    0000009c     rtsv7M4_T_le_v4SPD16_eabi.lib : memcpy_t2.obj (.text)
+                  00003b92    0000009a     joystick.obj (.text:_ZNK8std_msgs4Time9serializeEPh)
+                  00003c2c    00000086     rtsv7M4_T_le_v4SPD16_eabi.lib : fd_cmp_t2.obj (.text:__aeabi_cdcmple)
+                  00003cb2    00000086                                   : fd_cmp_t2.obj (.text:__aeabi_cdrcmple)
+                  00003d38    0000007e     joystick.obj (.text:_ZN14rosserial_msgs3Log11deserializeEPh)
+                  00003db6    0000007a     rtsv7M4_T_le_v4SPD16_eabi.lib : memset_t2.obj (.text)
+                  00003e30    00000074     joystick.obj (.text:_ZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EE8syncTimeEPh)
+                  00003ea4    00000070     rtsv7M4_T_le_v4SPD16_eabi.lib : autoinit.obj (.text)
+                  00003f14    0000006e     joystick.obj (.text:_ZN8std_msgs6String11deserializeEPh)
+                  00003f82    00000068     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_decompress_lzss.obj (.text:decompress:lzss)
+                  00003fea    00000002     --HOLE-- [fill = 0]
+                  00003fec    00000064     msp432p4xx_driverlib.lib : interrupt.o (.text:Interrupt_enableInterrupt)
+                  00004050    00000064     rtsv7M4_T_le_v4SPD16_eabi.lib : s_frexp.obj (.text)
+                  000040b4    00000060     joystick.obj (.text:_ZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EE6setNowERNS_4TimeE)
+                  00004114    00000060     rtsv7M4_T_le_v4SPD16_eabi.lib : sprintf.obj (.text)
+                  00004174    0000005e                                   : i_divt2.obj (.text)
+                  000041d2    0000005c     joystick.obj (.text:_ZNK14rosserial_msgs3Log9serializeEPh)
+                  0000422e    00000002     --HOLE-- [fill = 0]
+                  00004230    00000054     rtsv7M4_T_le_v4SPD16_eabi.lib : boot.obj (.text)
+                  00004284    00000054                                   : exit.obj (.text)
+                  000042d8    00000054                                   : ltoa.obj (.text)
+                  0000432c    00000052     joystick.obj (.text:_ZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EE9advertiseERNS_9PublisherE)
+                  0000437e    0000004c     joystick.obj (.text:_ZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EE9subscribeINS_10SubscriberIN11sensor_msgs3JoyEvEEEEbRT_)
+                  000043ca    00000002     --HOLE-- [fill = 0]
+                  000043cc    0000004c     led.obj (.text)
+                  00004418    0000004c     rtsv7M4_T_le_v4SPD16_eabi.lib : atoi.obj (.text)
+                  00004464    0000004c                                   : cpy_tbl.obj (.text)
+                  000044b0    00000048     joystick.obj (.text:_ZNK8std_msgs6String9serializeEPh)
+                  000044f8    00000048     rtsv7M4_T_le_v4SPD16_eabi.lib : fd_toi_t2.obj (.text)
+                  00004540    00000040     joystick.obj (.text:_ZN3ros10SubscriberIN11sensor_msgs3JoyEvEC1EPKcPFvRKS2_Ei)
+                  00004580    0000003c     joystick.obj (.text:_ZN14rosserial_msgs20RequestParamResponseC1Ev)
+                  000045bc    0000003c     joystick.obj (.text:_ZN14rosserial_msgs9TopicInfoC1Ev)
+                  000045f8    0000003c     joystick.obj (.text:_ZN3ros3Msg8arrToVarIjPhEEvRT_T0_)
+                  00004634    00000038     joystick.obj (.text:_ZN11sensor_msgs3JoyC1Ev)
+                  0000466c    00000034     msp432p4xx_driverlib.lib : interrupt.o (.text:Interrupt_registerInterrupt)
+                  000046a0    00000034     joystick.obj (.text:_ZN15Msp432CHardware5writeEPhi)
+                  000046d4    00000034     joystick.obj (.text:_ZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EE3logEcPKc)
+                  00004708    00000030     joystick.obj (.text:_ZN3ros3Msg8varToArrIPhjEEvT_T0_)
+                  00004738    00000030     joystick.obj (.text:_ZN8std_msgs6HeaderC1Ev)
+                  00004768    0000002e     joystick.obj (.text:_ZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EE15requestSyncTimeEv)
+                  00004796    0000002e     joystick.obj (.text:_ZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EE8initNodeEv)
+                  000047c4    0000002e     rtsv7M4_T_le_v4SPD16_eabi.lib : i_tofd_t2.obj (.text)
+                  000047f2    00000002     --HOLE-- [fill = 0]
+                  000047f4    00000028     joystick.obj (.text:_ZN14rosserial_msgs3LogC1Ev)
+                  0000481c    00000024     joystick.obj (.text:_ZN3ros9PublisherC1EPKcPNS_3MsgEi)
+                  00004840    00000024     joystick.obj (.text:_ZN8std_msgs6StringC1Ev)
+                  00004864    00000020     joystick.obj (.text:_ZN8std_msgs4TimeC1Ev)
+                  00004884    0000001e     joystick.obj (.text:_ZN3ros9Publisher7publishEPKNS_3MsgE)
+                  000048a2    0000001c     joystick.obj (.text:_ZN3ros10SubscriberIN11sensor_msgs3JoyEvE8callbackEPh)
+                  000048be    0000001c     rtsv7M4_T_le_v4SPD16_eabi.lib : memccpy.obj (.text)
+                  000048da    00000002     --HOLE-- [fill = 0]
+                  000048dc    00000018     joystick.obj (.text:_ZN3ros11Subscriber_C1Ev)
+                  000048f4    00000018     joystick.obj (.text:_ZN3ros15NodeHandleBase_C1Ev)
+                  0000490c    00000018     joystick.obj (.text:_ZN3ros3MsgC1Ev)
+                  00004924    00000018     joystick.obj (.text:_ZN3ros4TimeC1Ev)
+                  0000493c    00000018     rtsv7M4_T_le_v4SPD16_eabi.lib : args_main.obj (.text)
+                  00004954    00000016                                   : strchr.obj (.text)
+                  0000496a    00000002     --HOLE-- [fill = 0]
+                  0000496c    00000014     joystick.obj (.text:_ZN15Msp432CHardware4timeEv)
+                  00004980    00000014     rtsv7M4_T_le_v4SPD16_eabi.lib : _lock.obj (.text)
+                  00004994    00000014                                   : s_copysign.obj (.text)
+                  000049a8    00000014                                   : strlen.obj (.text)
+                  000049bc    00000012     joystick.obj (.text:_ZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EE8logerrorEPKc)
+                  000049ce    00000010     msp432p4xx_driverlib.lib : timer32.o (.text:Timer32_registerInterrupt)
+                  000049de    00000002     --HOLE-- [fill = 0]
+                  000049e0    00000010     joystick.obj (.text:_ZN11sensor_msgs3Joy6getMD5Ev)
+                  000049f0    00000010     joystick.obj (.text:_ZN11sensor_msgs3Joy7getTypeEv)
+                  00004a00    00000010     joystick.obj (.text:_ZN14rosserial_msgs20RequestParamResponse6getMD5Ev)
+                  00004a10    00000010     joystick.obj (.text:_ZN14rosserial_msgs20RequestParamResponse7getTypeEv)
+                  00004a20    00000010     joystick.obj (.text:_ZN14rosserial_msgs3Log6getMD5Ev)
+                  00004a30    00000010     joystick.obj (.text:_ZN14rosserial_msgs3Log7getTypeEv)
+                  00004a40    00000010     joystick.obj (.text:_ZN14rosserial_msgs9TopicInfo6getMD5Ev)
+                  00004a50    00000010     joystick.obj (.text:_ZN14rosserial_msgs9TopicInfo7getTypeEv)
+                  00004a60    00000010     joystick.obj (.text:_ZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EE9connectedEv)
+                  00004a70    00000010     joystick.obj (.text:_ZN8std_msgs4Time6getMD5Ev)
+                  00004a80    00000010     joystick.obj (.text:_ZN8std_msgs4Time7getTypeEv)
+                  00004a90    00000010     joystick.obj (.text:_ZN8std_msgs6Header6getMD5Ev)
+                  00004aa0    00000010     joystick.obj (.text:_ZN8std_msgs6Header7getTypeEv)
+                  00004ab0    00000010     joystick.obj (.text:_ZN8std_msgs6String6getMD5Ev)
+                  00004ac0    00000010     joystick.obj (.text:_ZN8std_msgs6String7getTypeEv)
+                  00004ad0    0000000e     joystick.obj (.text:_ZN15Msp432CHardware4initEv)
+                  00004ade    0000000e     joystick.obj (.text:_ZN15Msp432CHardware5delayEj)
+                  00004aec    0000000e     joystick.obj (.text:_ZN3ros10SubscriberIN11sensor_msgs3JoyEvE10getMsgTypeEv)
+                  00004afa    0000000e     joystick.obj (.text:_ZN3ros10SubscriberIN11sensor_msgs3JoyEvE15getEndpointTypeEv)
+                  00004b08    0000000e     joystick.obj (.text:_ZN3ros10SubscriberIN11sensor_msgs3JoyEvE9getMsgMD5Ev)
+                  00004b16    0000000e     joystick.obj (.text:_ZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EE11getHardwareEv)
+                  00004b24    0000000e     joystick.obj (.text:_ZN3ros9Publisher15getEndpointTypeEv)
+                  00004b32    0000000e     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_decompress_none.obj (.text:decompress:none)
+                  00004b40    0000000e     startup_msp432p401r_ccs.obj (.text)
+                  00004b4e    0000000c     joystick.obj (.text:_ZN15Msp432CHardwareC1Ev)
+                  00004b5a    0000000c     joystick.obj (.text:_ZN3ros11Subscriber_C2Ev)
+                  00004b66    0000000c     joystick.obj (.text:_ZN3ros15NodeHandleBase_C2Ev)
+                  00004b72    0000000c     joystick.obj (.text:_ZN3ros3MsgC2Ev)
+                  00004b7e    0000000c     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_zero_init.obj (.text:decompress:ZI)
+                  00004b8a    0000000a     joystick.obj (.text:_ZN15Msp432CHardware4readEv)
+                  00004b94    00000008     rtsv7M4_T_le_v4SPD16_eabi.lib : delete.obj (.text)
+                  00004b9c    00000006                                   : pure_virt.obj (.text)
+                  00004ba2    00000004                                   : error.obj (.text)
+                  00004ba6    00000004                                   : pre_init.obj (.text)
+
+.const     0    00004bac    0000075c     
+                  00004bac    00000101     rtsv7M4_T_le_v4SPD16_eabi.lib : ctype.obj (.const:.string:_ctypes_)
+                  00004cad    00000002                                   : typeinfo_.obj (.const:.typeinfo:_ZTSe)
+                  00004caf    00000001     joystick.obj (.const:.string:_ZZN14rosserial_msgs3LogC1EvEs)
+                  00004cb0    00000040     msp432p4xx_driverlib.lib : interrupt.o (.const)
+                  00004cf0    0000003d     joystick.obj (.const:.typeinfo:_ZTSN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EEE)
+                  00004d2d    00000039     joystick.obj (.const:.string:_ZZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EE7publishEiPKNS_3MsgEEs)
+                  00004d66    00000029     joystick.obj (.const:.typeinfo:_ZTSN14rosserial_msgs20RequestParamResponseE)
+                  00004d8f    00000029     joystick.obj (.const:.typeinfo:_ZTSN3ros10SubscriberIN11sensor_msgs3JoyEvEE)
+                  00004db8    00000028     rtsv7M4_T_le_v4SPD16_eabi.lib : typeinfo_.obj (.const:.typeinfo:_ZTSN10__cxxabiv123__fundamental_type_infoE)
+                  00004de0    00000025                                   : typeinfo_.obj (.const:.typeinfo:_ZTSN10__cxxabiv120__si_class_type_infoE)
+                  00004e05    00000024                                   : typeinfo_.obj (.const:.typeinfo:_ZTSN10__cxxabiv119__pointer_type_infoE)
+                  00004e29    00000001     joystick.obj (.const:.string:_ZZN14rosserial_msgs9TopicInfoC1EvEs)
+                  00004e2a    00000001     joystick.obj (.const:.string:_ZZN8std_msgs6HeaderC1EvEs)
+                  00004e2b    00000001     joystick.obj (.const:.string:_ZZN8std_msgs6StringC1EvEs)
+                  00004e2c    00000024     uart.obj (.const:uartConfig)
+                  00004e50    00000022     rtsv7M4_T_le_v4SPD16_eabi.lib : typeinfo_.obj (.const:.typeinfo:_ZTSN10__cxxabiv117__class_type_infoE)
+                  00004e72    00000022                                   : typeinfo_.obj (.const:.typeinfo:_ZTSN10__cxxabiv117__pbase_type_infoE)
+                  00004e94    00000021     joystick.obj (.const:.string:_ZZN11sensor_msgs3Joy6getMD5EvEs)
+                  00004eb5    00000021     joystick.obj (.const:.string:_ZZN14rosserial_msgs20RequestParamResponse6getMD5EvEs)
+                  00004ed6    00000021     joystick.obj (.const:.string:_ZZN14rosserial_msgs3Log6getMD5EvEs)
+                  00004ef7    00000021     joystick.obj (.const:.string:_ZZN14rosserial_msgs9TopicInfo6getMD5EvEs)
+                  00004f18    00000021     joystick.obj (.const:.string:_ZZN8std_msgs4Time6getMD5EvEs)
+                  00004f39    00000021     joystick.obj (.const:.string:_ZZN8std_msgs6Header6getMD5EvEs)
+                  00004f5a    00000021     joystick.obj (.const:.string:_ZZN8std_msgs6String6getMD5EvEs)
+                  00004f7b    0000001d     joystick.obj (.const:.typeinfo:_ZTSN14rosserial_msgs9TopicInfoE)
+                  00004f98    0000001c     joystick.obj (.const:.string:_ZN14rosserial_msgs12REQUESTPARAME)
+                  00004fb4    00000019     joystick.obj (.const:.string:_ZZN14rosserial_msgs9TopicInfo7getTypeEvEs)
+                  00004fcd    00000018     joystick.obj (.const:.typeinfo:_ZTSN3ros15NodeHandleBase_E)
+                  00004fe5    00000003     --HOLE-- [fill = 0]
+                  00004fe8    00000018     joystick.obj (.const:_ZTVN11sensor_msgs3JoyE)
+                  00005000    00000018     joystick.obj (.const:_ZTVN14rosserial_msgs20RequestParamResponseE)
+                  00005018    00000018     joystick.obj (.const:_ZTVN14rosserial_msgs3LogE)
+                  00005030    00000018     joystick.obj (.const:_ZTVN14rosserial_msgs9TopicInfoE)
+                  00005048    00000018     joystick.obj (.const:_ZTVN3ros10SubscriberIN11sensor_msgs3JoyEvEE)
+                  00005060    00000018     joystick.obj (.const:_ZTVN3ros11Subscriber_E)
+                  00005078    00000018     joystick.obj (.const:_ZTVN3ros3MsgE)
+                  00005090    00000018     joystick.obj (.const:_ZTVN8std_msgs4TimeE)
+                  000050a8    00000018     joystick.obj (.const:_ZTVN8std_msgs6HeaderE)
+                  000050c0    00000018     joystick.obj (.const:_ZTVN8std_msgs6StringE)
+                  000050d8    00000017     joystick.obj (.const:.typeinfo:_ZTSN14rosserial_msgs3LogE)
+                  000050ef    00000014     joystick.obj (.const:.typeinfo:_ZTSN11sensor_msgs3JoyE)
+                  00005103    00000014     joystick.obj (.const:.typeinfo:_ZTSN3ros11Subscriber_E)
+                  00005117    00000001     --HOLE-- [fill = 0]
+                  00005118    00000014     joystick.obj (.const:_ZTVN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EEE)
+                  0000512c    00000014     joystick.obj (.const:_ZTVN3ros15NodeHandleBase_E)
+                  00005140    00000013     joystick.obj (.const:.string:_ZZN14rosserial_msgs3Log7getTypeEvEs)
+                  00005153    00000013     joystick.obj (.const:.typeinfo:_ZTSN8std_msgs6HeaderE)
+                  00005166    00000013     joystick.obj (.const:.typeinfo:_ZTSN8std_msgs6StringE)
+                  00005179    00000011     joystick.obj (.const:.typeinfo:_ZTSN8std_msgs4TimeE)
+                  0000518a    00000010     joystick.obj (.const:.string:_ZZN11sensor_msgs3Joy7getTypeEvEs)
+                  0000519a    00000010     joystick.obj (.const:.string:_ZZN8std_msgs6Header7getTypeEvEs)
+                  000051aa    00000010     joystick.obj (.const:.string:_ZZN8std_msgs6String7getTypeEvEs)
+                  000051ba    00000002     --HOLE-- [fill = 0]
+                  000051bc    00000010     rtsv7M4_T_le_v4SPD16_eabi.lib : typeinfo_.obj (.const:.typeinfo:_ZTIPKe)
+                  000051cc    00000010                                   : typeinfo_.obj (.const:_ZTVN10__cxxabiv117__class_type_infoE)
+                  000051dc    00000010                                   : typeinfo_.obj (.const:_ZTVN10__cxxabiv119__pointer_type_infoE)
+                  000051ec    00000010                                   : typeinfo_.obj (.const:_ZTVN10__cxxabiv120__si_class_type_infoE)
+                  000051fc    00000010                                   : typeinfo_.obj (.const:_ZTVN10__cxxabiv123__fundamental_type_infoE)
+                  0000520c    0000000e     joystick.obj (.const:.string:_ZZN8std_msgs4Time7getTypeEvEs)
+                  0000521a    0000000d     rtsv7M4_T_le_v4SPD16_eabi.lib : typeinfo_.obj (.const:.typeinfo:_ZTSSt9type_info)
+                  00005227    00000001     --HOLE-- [fill = 0]
+                  00005228    0000000c                                   : typeinfo_.obj (.const:.typeinfo:_ZTIN10__cxxabiv117__class_type_infoE)
+                  00005234    0000000c                                   : typeinfo_.obj (.const:.typeinfo:_ZTIN10__cxxabiv117__pbase_type_infoE)
+                  00005240    0000000c                                   : typeinfo_.obj (.const:.typeinfo:_ZTIN10__cxxabiv119__pointer_type_infoE)
+                  0000524c    0000000c                                   : typeinfo_.obj (.const:.typeinfo:_ZTIN10__cxxabiv120__si_class_type_infoE)
+                  00005258    0000000c                                   : typeinfo_.obj (.const:.typeinfo:_ZTIN10__cxxabiv123__fundamental_type_infoE)
+                  00005264    0000000c     joystick.obj (.const:.typeinfo:_ZTIN11sensor_msgs3JoyE)
+                  00005270    0000000c     joystick.obj (.const:.typeinfo:_ZTIN14rosserial_msgs20RequestParamResponseE)
+                  0000527c    0000000c     joystick.obj (.const:.typeinfo:_ZTIN14rosserial_msgs3LogE)
+                  00005288    0000000c     joystick.obj (.const:.typeinfo:_ZTIN14rosserial_msgs9TopicInfoE)
+                  00005294    0000000c     joystick.obj (.const:.typeinfo:_ZTIN3ros10SubscriberIN11sensor_msgs3JoyEvEE)
+                  000052a0    0000000c     joystick.obj (.const:.typeinfo:_ZTIN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EEE)
+                  000052ac    0000000c     joystick.obj (.const:.typeinfo:_ZTIN8std_msgs4TimeE)
+                  000052b8    0000000c     joystick.obj (.const:.typeinfo:_ZTIN8std_msgs6HeaderE)
+                  000052c4    0000000c     joystick.obj (.const:.typeinfo:_ZTIN8std_msgs6StringE)
+                  000052d0    0000000b     joystick.obj (.const:.typeinfo:_ZTSN3ros3MsgE)
+                  000052db    00000001     --HOLE-- [fill = 0]
+                  000052dc    00000008     joystick.obj (.const:.typeinfo:_ZTIN3ros11Subscriber_E)
+                  000052e4    00000008     joystick.obj (.const:.typeinfo:_ZTIN3ros15NodeHandleBase_E)
+                  000052ec    00000008     joystick.obj (.const:.typeinfo:_ZTIN3ros3MsgE)
+                  000052f4    00000008     rtsv7M4_T_le_v4SPD16_eabi.lib : typeinfo_.obj (.const:.typeinfo:_ZTISt9type_info)
+                  000052fc    00000008                                   : typeinfo_.obj (.const:.typeinfo:_ZTIe)
+                  00005304    00000004                                   : typeinfo_.obj (.const:.typeinfo:_ZTSPKe)
+
+.cinit     0    00005310    00000060     
+                  00005310    00000027     (.cinit..data.load) [load image, compression = lzss]
+                  00005337    00000001     --HOLE-- [fill = 0]
+                  00005338    0000000c     (__TI_handler_table)
+                  00005344    00000004     --HOLE-- [fill = 0]
+                  00005348    00000008     (.cinit..bss.load) [load image, compression = zero_init]
+                  00005350    00000008     (.cinit..vtable.load) [load image, compression = zero_init]
+                  00005358    00000018     (__TI_cinit_table)
+
+.init_array 
+*          0    00005308    00000004     
+                  00005308    00000004     joystick.obj (.init_array)
+
+.vtable    0    20000000    000000e4     UNINITIALIZED
+                  20000000    000000e4     msp432p4xx_driverlib.lib : interrupt.o (.vtable)
+
+.bss       0    200000e4    000004be     UNINITIALIZED
+                  200000e4    00000200     (.common:_uartRxBuffer)
+                  200002e4    00000200     (.common:_uartTxBuffer)
+                  200004e4    00000050     (.common:msg_buffer)
+                  20000534    00000044     joystick.obj (.bss:sub)
+                  20000578    00000014     joystick.obj (.bss:pub)
+                  2000058c    00000008     joystick.obj (.bss:msg)
+                  20000594    00000004     (.common:_ZSt16__dummy_typeinfo)
+                  20000598    00000004     (.common:angular)
+                  2000059c    00000004     (.common:vel)
+                  200005a0    00000001     (.common:orange)
+                  200005a1    00000001     (.common:red)
+
+.sysmem    0    200005a8    00000400     UNINITIALIZED
+                  200005a8    00000008     rtsv7M4_T_le_v4SPD16_eabi.lib : memory.obj (.sysmem)
+                  200005b0    000003f8     --HOLE--
+
+.data      0    200009a8    0000004c     UNINITIALIZED
+                  200009a8    00000011     uart.obj (.data)
+                  200009b9    00000003     --HOLE--
+                  200009bc    0000000c     rtsv7M4_T_le_v4SPD16_eabi.lib : exit.obj (.data:$O1$$)
+                  200009c8    0000000c                                   : memory.obj (.data:$O1$$)
+                  200009d4    0000000c     clocks.obj (.data)
+                  200009e0    00000008     rtsv7M4_T_le_v4SPD16_eabi.lib : _lock.obj (.data:$O1$$)
+                  200009e8    00000004                                   : errno.obj (.data)
+                  200009ec    00000004                                   : stkdepth_vars.obj (.data)
+                  200009f0    00000004     system_msp432p401r.obj (.data)
+
+.stack     0    2000fe00    00000200     UNINITIALIZED
+                  2000fe00    00000200     --HOLE--
+
+MODULE SUMMARY
+
+       Module                        code    ro data   rw data
+       ------                        ----    -------   -------
+    ./
+       joystick.obj                  7790    1167      372    
+       system_msp432p401r.obj        812     0         8      
+       startup_msp432p401r_ccs.obj   14      228       0      
+       led.obj                       76      0         0      
+    +--+-----------------------------+-------+---------+---------+
+       Total:                        8692    1395      380    
+                                                              
+    /home/pops/Documents/Ros_MSP432/RosSerialHardware/Debug/src/
+       uart.obj                      488     36        2082   
+       clocks.obj                    492     0         24     
+       time.obj                      192     0         0      
+    +--+-----------------------------+-------+---------+---------+
+       Total:                        1172    36        2106   
+                                                              
+    /home/pops/ti/tirex-content/msp/msp432ware__3.50.00.02/driverlib/driverlib/MSP432P4xx/ccs/msp432p4xx_driverlib.lib
+       interrupt.o                   152     64        456    
+       timer32.o                     16      0         0      
+    +--+-----------------------------+-------+---------+---------+
+       Total:                        168     64        456    
+                                                              
+    /opt/ti/ccsv7/tools/compiler/ti-cgt-arm_17.3.0.STS/lib/rtsv7M4_T_le_v4SPD16_eabi.lib
+       _printfi.obj                  4418    0         0      
+       memory.obj                    976     0         24     
+       typeinfo_.obj                 188     356       8      
+       ull_div_t2.obj                500     0         0      
+       fd_add_t2.obj                 438     0         0      
+       fd_div_t2.obj                 310     0         0      
+       fd_cmp_t2.obj                 268     0         0      
+       ctype.obj                     0       257       0      
+       fd_mul_t2.obj                 252     0         0      
+       s_scalbn.obj                  252     0         0      
+       memcpy_t2.obj                 156     0         0      
+       memset_t2.obj                 122     0         0      
+       autoinit.obj                  112     0         0      
+       exit.obj                      84      0         24     
+       copy_decompress_lzss.obj      104     0         0      
+       s_frexp.obj                   100     0         0      
+       sprintf.obj                   96      0         0      
+       i_divt2.obj                   94      0         0      
+       boot.obj                      84      0         0      
+       ltoa.obj                      84      0         0      
+       atoi.obj                      76      0         0      
+       cpy_tbl.obj                   76      0         0      
+       fd_toi_t2.obj                 72      0         0      
+       i_tofd_t2.obj                 46      0         0      
+       _lock.obj                     20      0         16     
+       memccpy.obj                   28      0         0      
+       args_main.obj                 24      0         0      
+       strchr.obj                    22      0         0      
+       s_copysign.obj                20      0         0      
+       strlen.obj                    20      0         0      
+       copy_decompress_none.obj      14      0         0      
+       copy_zero_init.obj            12      0         0      
+       delete.obj                    8       0         0      
+       errno.obj                     0       0         8      
+       stkdepth_vars.obj             0       0         8      
+       pure_virt.obj                 6       0         0      
+       error.obj                     4       0         0      
+       pre_init.obj                  4       0         0      
+       i_div0.obj                    2       0         0      
+       mpu_init.obj                  2       0         0      
+       startup.obj                   2       0         0      
+    +--+-----------------------------+-------+---------+---------+
+       Total:                        9096    613       88     
+                                                              
+       Heap:                         0       0         2048   
+       Stack:                        0       0         1024   
+       Linker Generated:             0       91        0      
+    +--+-----------------------------+-------+---------+---------+
+       Grand Total:                  19128   2199      6102   
+
+
+LINKER GENERATED COPY TABLES
+
+__TI_cinit_table @ 00005358 records: 3, size/record: 8, table size: 24
+	.data: load addr=00005310, load size=00000027 bytes, run addr=200009a8, run size=0000004c bytes, compression=lzss
+	.bss: load addr=00005348, load size=00000008 bytes, run addr=200000e4, run size=000004be bytes, compression=zero_init
+	.vtable: load addr=00005350, load size=00000008 bytes, run addr=20000000, run size=000000e4 bytes, compression=zero_init
+
+
+LINKER GENERATED HANDLER TABLE
+
+__TI_handler_table @ 00005338 records: 3, size/record: 4, table size: 12
+	index: 0, handler: __TI_zero_init
+	index: 1, handler: __TI_decompress_lzss
+	index: 2, handler: __TI_decompress_none
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address   name                                                                                                                
+-------   ----                                                                                                                
+00004b4d  ADC14_IRQHandler                                                                                                    
+00004b4d  AES256_IRQHandler                                                                                                   
+00004b4d  BusFault_Handler                                                                                                    
+00004285  C$$EXIT                                                                                                             
+00004b4d  COMP_E0_IRQHandler                                                                                                  
+00004b4d  COMP_E1_IRQHandler                                                                                                  
+00004b4d  CS_IRQHandler                                                                                                       
+00004b4d  DMA_ERR_IRQHandler                                                                                                  
+00004b4d  DMA_INT0_IRQHandler                                                                                                 
+00004b4d  DMA_INT1_IRQHandler                                                                                                 
+00004b4d  DMA_INT2_IRQHandler                                                                                                 
+00004b4d  DMA_INT3_IRQHandler                                                                                                 
+00004b4d  DebugMon_Handler                                                                                                    
+00004b4d  Default_Handler                                                                                                     
+000024b5  EUSCIA0_IRQHandler                                                                                                  
+000024b5  EUSCIA0_IRQHandler                                                                                                  
+00004b4d  EUSCIA1_IRQHandler                                                                                                  
+00004b4d  EUSCIA2_IRQHandler                                                                                                  
+00004b4d  EUSCIA3_IRQHandler                                                                                                  
+00004b4d  EUSCIB0_IRQHandler                                                                                                  
+00004b4d  EUSCIB1_IRQHandler                                                                                                  
+00004b4d  EUSCIB2_IRQHandler                                                                                                  
+00004b4d  EUSCIB3_IRQHandler                                                                                                  
+00004b4d  FLCTL_IRQHandler                                                                                                    
+00004b4d  FPU_IRQHandler                                                                                                      
+00004b4d  HardFault_Handler                                                                                                   
+00003fed  Interrupt_enableInterrupt                                                                                           
+0000466d  Interrupt_registerInterrupt                                                                                         
+00004b4d  MemManage_Handler                                                                                                   
+00004b4d  NMI_Handler                                                                                                         
+00004b4d  PCM_IRQHandler                                                                                                      
+00004b4d  PORT1_IRQHandler                                                                                                    
+00004b4d  PORT2_IRQHandler                                                                                                    
+00004b4d  PORT3_IRQHandler                                                                                                    
+00004b4d  PORT4_IRQHandler                                                                                                    
+00004b4d  PORT5_IRQHandler                                                                                                    
+00004b4d  PORT6_IRQHandler                                                                                                    
+00004b4d  PSS_IRQHandler                                                                                                      
+00004b4d  PendSV_Handler                                                                                                      
+00004b4d  RTC_C_IRQHandler                                                                                                    
+00004b41  Reset_Handler                                                                                                       
+00005308  SHT$$INIT_ARRAY$$Base                                                                                               
+0000530c  SHT$$INIT_ARRAY$$Limit                                                                                              
+00004b4d  SVC_Handler                                                                                                         
+00002381  SysTick_Handler                                                                                                     
+00002381  SysTick_Handler                                                                                                     
+200009f0  SystemCoreClock                                                                                                     
+000015f9  SystemCoreClockUpdate                                                                                               
+0000186d  SystemInit                                                                                                          
+00004b4d  T32_INT1_IRQHandler                                                                                                 
+00004b4d  T32_INT2_IRQHandler                                                                                                 
+00004b4d  T32_INTC_IRQHandler                                                                                                 
+00004b4d  TA0_0_IRQHandler                                                                                                    
+00004b4d  TA0_N_IRQHandler                                                                                                    
+00004b4d  TA1_0_IRQHandler                                                                                                    
+00004b4d  TA1_N_IRQHandler                                                                                                    
+00004b4d  TA2_0_IRQHandler                                                                                                    
+00004b4d  TA2_N_IRQHandler                                                                                                    
+00004b4d  TA3_0_IRQHandler                                                                                                    
+00004b4d  TA3_N_IRQHandler                                                                                                    
+000049cf  Timer32_registerInterrupt                                                                                           
+00004b4d  UsageFault_Handler                                                                                                  
+4000480c  WDTCTL_SYM                                                                                                          
+00004b4d  WDT_A_IRQHandler                                                                                                    
+00002d45  _Z9joyDataCbRKN11sensor_msgs3JoyE                                                                                   
+00003a49  _ZN10__cxxabiv116__enum_type_infoD0Ev                                                                               
+00003a47  _ZN10__cxxabiv116__enum_type_infoD1Ev                                                                               
+00003a47  _ZN10__cxxabiv116__enum_type_infoD2Ev                                                                               
+00003a3f  _ZN10__cxxabiv117__array_type_infoD0Ev                                                                              
+00003a3d  _ZN10__cxxabiv117__array_type_infoD1Ev                                                                              
+00003a3d  _ZN10__cxxabiv117__array_type_infoD2Ev                                                                              
+00003a35  _ZN10__cxxabiv117__class_type_infoD0Ev                                                                              
+00003a33  _ZN10__cxxabiv117__class_type_infoD1Ev                                                                              
+00003a33  _ZN10__cxxabiv117__class_type_infoD2Ev                                                                              
+00003a2b  _ZN10__cxxabiv117__pbase_type_infoD0Ev                                                                              
+00003a29  _ZN10__cxxabiv117__pbase_type_infoD1Ev                                                                              
+00003a29  _ZN10__cxxabiv117__pbase_type_infoD2Ev                                                                              
+00003a21  _ZN10__cxxabiv119__pointer_type_infoD0Ev                                                                            
+00003a1f  _ZN10__cxxabiv119__pointer_type_infoD1Ev                                                                            
+00003a1f  _ZN10__cxxabiv119__pointer_type_infoD2Ev                                                                            
+00003a17  _ZN10__cxxabiv120__function_type_infoD0Ev                                                                           
+00003a15  _ZN10__cxxabiv120__function_type_infoD1Ev                                                                           
+00003a15  _ZN10__cxxabiv120__function_type_infoD2Ev                                                                           
+00003a0d  _ZN10__cxxabiv120__si_class_type_infoD0Ev                                                                           
+00003a0b  _ZN10__cxxabiv120__si_class_type_infoD1Ev                                                                           
+00003a0b  _ZN10__cxxabiv120__si_class_type_infoD2Ev                                                                           
+00003a03  _ZN10__cxxabiv121__vmi_class_type_infoD0Ev                                                                          
+00003a01  _ZN10__cxxabiv121__vmi_class_type_infoD1Ev                                                                          
+00003a01  _ZN10__cxxabiv121__vmi_class_type_infoD2Ev                                                                          
+000039f9  _ZN10__cxxabiv123__fundamental_type_infoD0Ev                                                                        
+000039f7  _ZN10__cxxabiv123__fundamental_type_infoD1Ev                                                                        
+000039f7  _ZN10__cxxabiv123__fundamental_type_infoD2Ev                                                                        
+000039ef  _ZN10__cxxabiv129__pointer_to_member_type_infoD0Ev                                                                  
+000039ed  _ZN10__cxxabiv129__pointer_to_member_type_infoD1Ev                                                                  
+000039ed  _ZN10__cxxabiv129__pointer_to_member_type_infoD2Ev                                                                  
+0000269d  _ZN11sensor_msgs3Joy11deserializeEPh                                                                                
+000049e1  _ZN11sensor_msgs3Joy6getMD5Ev                                                                                       
+000049f1  _ZN11sensor_msgs3Joy7getTypeEv                                                                                      
+00004635  _ZN11sensor_msgs3JoyC1Ev                                                                                            
+00001c4b  _ZN14rosserial_msgs20RequestParamResponse11deserializeEPh                                                           
+00004a01  _ZN14rosserial_msgs20RequestParamResponse6getMD5Ev                                                                  
+00004a11  _ZN14rosserial_msgs20RequestParamResponse7getTypeEv                                                                 
+00004581  _ZN14rosserial_msgs20RequestParamResponseC1Ev                                                                       
+00003d39  _ZN14rosserial_msgs3Log11deserializeEPh                                                                             
+00004a21  _ZN14rosserial_msgs3Log6getMD5Ev                                                                                    
+00004a31  _ZN14rosserial_msgs3Log7getTypeEv                                                                                   
+000047f5  _ZN14rosserial_msgs3LogC1Ev                                                                                         
+00002bb5  _ZN14rosserial_msgs9TopicInfo11deserializeEPh                                                                       
+00004a41  _ZN14rosserial_msgs9TopicInfo6getMD5Ev                                                                              
+00004a51  _ZN14rosserial_msgs9TopicInfo7getTypeEv                                                                             
+000045bd  _ZN14rosserial_msgs9TopicInfoC1Ev                                                                                   
+00004ad1  _ZN15Msp432CHardware4initEv                                                                                         
+00004b8b  _ZN15Msp432CHardware4readEv                                                                                         
+0000496d  _ZN15Msp432CHardware4timeEv                                                                                         
+00004adf  _ZN15Msp432CHardware5delayEj                                                                                        
+000046a1  _ZN15Msp432CHardware5writeEPhi                                                                                      
+00004b4f  _ZN15Msp432CHardwareC1Ev                                                                                            
+00004aed  _ZN3ros10SubscriberIN11sensor_msgs3JoyEvE10getMsgTypeEv                                                             
+00004afb  _ZN3ros10SubscriberIN11sensor_msgs3JoyEvE15getEndpointTypeEv                                                        
+000048a3  _ZN3ros10SubscriberIN11sensor_msgs3JoyEvE8callbackEPh                                                               
+00004b09  _ZN3ros10SubscriberIN11sensor_msgs3JoyEvE9getMsgMD5Ev                                                               
+00004541  _ZN3ros10SubscriberIN11sensor_msgs3JoyEvEC1EPKcPFvRKS2_Ei                                                           
+00004b17  _ZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EE11getHardwareEv                                        
+00002a1f  _ZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EE15negotiateTopicsEv                                    
+00004769  _ZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EE15requestSyncTimeEv                                    
+000046d5  _ZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EE3logEcPKc                                              
+000040b5  _ZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EE6setNowERNS_4TimeE                                     
+000032a1  _ZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EE7publishEiPKNS_3MsgE                                   
+00004797  _ZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EE8initNodeEv                                            
+000049bd  _ZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EE8logerrorEPKc                                          
+00001925  _ZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EE8spinOnceEv                                            
+00003e31  _ZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EE8syncTimeEPh                                           
+0000432d  _ZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EE9advertiseERNS_9PublisherE                             
+00004a61  _ZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EE9connectedEv                                           
+0000437f  _ZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EE9subscribeINS_10SubscriberIN11sensor_msgs3JoyEvEEEEbRT_
+000037f1  _ZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EEC1Ev                                                   
+000048dd  _ZN3ros11Subscriber_C1Ev                                                                                            
+00004b5b  _ZN3ros11Subscriber_C2Ev                                                                                            
+000048f5  _ZN3ros15NodeHandleBase_C1Ev                                                                                        
+00004b67  _ZN3ros15NodeHandleBase_C2Ev                                                                                        
+00003961  _ZN3ros16normalizeSecNSecERjS0_                                                                                     
+000045f9  _ZN3ros3Msg8arrToVarIjPhEEvRT_T0_                                                                                   
+00004709  _ZN3ros3Msg8varToArrIPhjEEvT_T0_                                                                                    
+0000490d  _ZN3ros3MsgC1Ev                                                                                                     
+00004b73  _ZN3ros3MsgC2Ev                                                                                                     
+000038dd  _ZN3ros4Time8fromNSecEi                                                                                             
+00004925  _ZN3ros4TimeC1Ev                                                                                                    
+00003935  _ZN3ros4TimemIERKNS_8DurationE                                                                                      
+00003909  _ZN3ros4TimepLERKNS_8DurationE                                                                                      
+00004b25  _ZN3ros9Publisher15getEndpointTypeEv                                                                                
+00004885  _ZN3ros9Publisher7publishEPKNS_3MsgE                                                                                
+0000481d  _ZN3ros9PublisherC1EPKcPNS_3MsgEi                                                                                   
+00003a59  _ZN8std_msgs4Time11deserializeEPh                                                                                   
+00004a71  _ZN8std_msgs4Time6getMD5Ev                                                                                          
+00004a81  _ZN8std_msgs4Time7getTypeEv                                                                                         
+00004865  _ZN8std_msgs4TimeC1Ev                                                                                               
+00003029  _ZN8std_msgs6Header11deserializeEPh                                                                                 
+00004a91  _ZN8std_msgs6Header6getMD5Ev                                                                                        
+00004aa1  _ZN8std_msgs6Header7getTypeEv                                                                                       
+00004739  _ZN8std_msgs6HeaderC1Ev                                                                                             
+00003f15  _ZN8std_msgs6String11deserializeEPh                                                                                 
+00004ab1  _ZN8std_msgs6String6getMD5Ev                                                                                        
+00004ac1  _ZN8std_msgs6String7getTypeEv                                                                                       
+00004841  _ZN8std_msgs6StringC1Ev                                                                                             
+00002ebd  _ZNK11sensor_msgs3Joy9serializeEPh                                                                                  
+000020d7  _ZNK14rosserial_msgs20RequestParamResponse9serializeEPh                                                             
+000041d3  _ZNK14rosserial_msgs3Log9serializeEPh                                                                               
+000033cd  _ZNK14rosserial_msgs9TopicInfo9serializeEPh                                                                         
+00003b93  _ZNK8std_msgs4Time9serializeEPh                                                                                     
+000034e3  _ZNK8std_msgs6Header9serializeEPh                                                                                   
+000044b1  _ZNK8std_msgs6String9serializeEPh                                                                                   
+000039af  _ZNKSt9type_info4nameEv                                                                                             
+000039df  _ZNKSt9type_info6beforeERKS_                                                                                        
+000039c9  _ZNKSt9type_infoeqERKS_                                                                                             
+000039b3  _ZNKSt9type_infoneERKS_                                                                                             
+000039a7  _ZNSt9type_infoD0Ev                                                                                                 
+000039a5  _ZNSt9type_infoD1Ev                                                                                                 
+000039a5  _ZNSt9type_infoD2Ev                                                                                                 
+20000594  _ZSt16__dummy_typeinfo                                                                                              
+0000399d  _ZSt21__gen_dummy_typeinfosv                                                                                        
+00005228  _ZTIN10__cxxabiv117__class_type_infoE                                                                               
+00005234  _ZTIN10__cxxabiv117__pbase_type_infoE                                                                               
+00005240  _ZTIN10__cxxabiv119__pointer_type_infoE                                                                             
+0000524c  _ZTIN10__cxxabiv120__si_class_type_infoE                                                                            
+00005258  _ZTIN10__cxxabiv123__fundamental_type_infoE                                                                         
+00005264  _ZTIN11sensor_msgs3JoyE                                                                                             
+00005270  _ZTIN14rosserial_msgs20RequestParamResponseE                                                                        
+0000527c  _ZTIN14rosserial_msgs3LogE                                                                                          
+00005288  _ZTIN14rosserial_msgs9TopicInfoE                                                                                    
+00005294  _ZTIN3ros10SubscriberIN11sensor_msgs3JoyEvEE                                                                        
+000052a0  _ZTIN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EEE                                                    
+000052dc  _ZTIN3ros11Subscriber_E                                                                                             
+000052e4  _ZTIN3ros15NodeHandleBase_E                                                                                         
+000052ec  _ZTIN3ros3MsgE                                                                                                      
+000052ac  _ZTIN8std_msgs4TimeE                                                                                                
+000052b8  _ZTIN8std_msgs6HeaderE                                                                                              
+000052c4  _ZTIN8std_msgs6StringE                                                                                              
+000051bc  _ZTIPKe                                                                                                             
+000052f4  _ZTISt9type_info                                                                                                    
+000052fc  _ZTIe                                                                                                               
+00004e50  _ZTSN10__cxxabiv117__class_type_infoE                                                                               
+00004e72  _ZTSN10__cxxabiv117__pbase_type_infoE                                                                               
+00004e05  _ZTSN10__cxxabiv119__pointer_type_infoE                                                                             
+00004de0  _ZTSN10__cxxabiv120__si_class_type_infoE                                                                            
+00004db8  _ZTSN10__cxxabiv123__fundamental_type_infoE                                                                         
+000050ef  _ZTSN11sensor_msgs3JoyE                                                                                             
+00004d66  _ZTSN14rosserial_msgs20RequestParamResponseE                                                                        
+000050d8  _ZTSN14rosserial_msgs3LogE                                                                                          
+00004f7b  _ZTSN14rosserial_msgs9TopicInfoE                                                                                    
+00004d8f  _ZTSN3ros10SubscriberIN11sensor_msgs3JoyEvEE                                                                        
+00004cf0  _ZTSN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EEE                                                    
+00005103  _ZTSN3ros11Subscriber_E                                                                                             
+00004fcd  _ZTSN3ros15NodeHandleBase_E                                                                                         
+000052d0  _ZTSN3ros3MsgE                                                                                                      
+00005179  _ZTSN8std_msgs4TimeE                                                                                                
+00005153  _ZTSN8std_msgs6HeaderE                                                                                              
+00005166  _ZTSN8std_msgs6StringE                                                                                              
+00005304  _ZTSPKe                                                                                                             
+0000521a  _ZTSSt9type_info                                                                                                    
+00004cad  _ZTSe                                                                                                               
+000051cc  _ZTVN10__cxxabiv117__class_type_infoE                                                                               
+000051dc  _ZTVN10__cxxabiv119__pointer_type_infoE                                                                             
+000051ec  _ZTVN10__cxxabiv120__si_class_type_infoE                                                                            
+000051fc  _ZTVN10__cxxabiv123__fundamental_type_infoE                                                                         
+00004fe8  _ZTVN11sensor_msgs3JoyE                                                                                             
+00005000  _ZTVN14rosserial_msgs20RequestParamResponseE                                                                        
+00005018  _ZTVN14rosserial_msgs3LogE                                                                                          
+00005030  _ZTVN14rosserial_msgs9TopicInfoE                                                                                    
+00005048  _ZTVN3ros10SubscriberIN11sensor_msgs3JoyEvEE                                                                        
+00005118  _ZTVN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EEE                                                    
+00005060  _ZTVN3ros11Subscriber_E                                                                                             
+0000512c  _ZTVN3ros15NodeHandleBase_E                                                                                         
+00005078  _ZTVN3ros3MsgE                                                                                                      
+00005090  _ZTVN8std_msgs4TimeE                                                                                                
+000050a8  _ZTVN8std_msgs6HeaderE                                                                                              
+000050c0  _ZTVN8std_msgs6StringE                                                                                              
+00004e94  _ZZN11sensor_msgs3Joy6getMD5EvEs                                                                                    
+0000518a  _ZZN11sensor_msgs3Joy7getTypeEvEs                                                                                   
+00004eb5  _ZZN14rosserial_msgs20RequestParamResponse6getMD5EvEs                                                               
+00004ed6  _ZZN14rosserial_msgs3Log6getMD5EvEs                                                                                 
+00005140  _ZZN14rosserial_msgs3Log7getTypeEvEs                                                                                
+00004caf  _ZZN14rosserial_msgs3LogC1EvEs                                                                                      
+00004ef7  _ZZN14rosserial_msgs9TopicInfo6getMD5EvEs                                                                           
+00004fb4  _ZZN14rosserial_msgs9TopicInfo7getTypeEvEs                                                                          
+00004e29  _ZZN14rosserial_msgs9TopicInfoC1EvEs                                                                                
+00004d2d  _ZZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EE7publishEiPKNS_3MsgEEs                                
+00004f18  _ZZN8std_msgs4Time6getMD5EvEs                                                                                       
+0000520c  _ZZN8std_msgs4Time7getTypeEvEs                                                                                      
+00004f39  _ZZN8std_msgs6Header6getMD5EvEs                                                                                     
+0000519a  _ZZN8std_msgs6Header7getTypeEvEs                                                                                    
+00004e2a  _ZZN8std_msgs6HeaderC1EvEs                                                                                          
+00004f5a  _ZZN8std_msgs6String6getMD5EvEs                                                                                     
+000051aa  _ZZN8std_msgs6String7getTypeEvEs                                                                                    
+00004e2b  _ZZN8std_msgs6StringC1EvEs                                                                                          
+00004b95  _ZdlPv                                                                                                              
+20010000  __STACK_END                                                                                                         
+00000200  __STACK_SIZE                                                                                                        
+00000400  __SYSMEM_SIZE                                                                                                       
+00005358  __TI_CINIT_Base                                                                                                     
+00005370  __TI_CINIT_Limit                                                                                                    
+00005338  __TI_Handler_Table_Base                                                                                             
+00005344  __TI_Handler_Table_Limit                                                                                            
+00003ea5  __TI_auto_init                                                                                                      
+200009bc  __TI_cleanup_ptr                                                                                                    
+00003f83  __TI_decompress_lzss                                                                                                
+00004b33  __TI_decompress_none                                                                                                
+200009c0  __TI_dtors_ptr                                                                                                      
+200009c4  __TI_enable_exit_profile_output                                                                                     
+ffffffff  __TI_pprof_out_hndl                                                                                                 
+00000931  __TI_printfi                                                                                                        
+ffffffff  __TI_prof_data_size                                                                                                 
+ffffffff  __TI_prof_data_start                                                                                                
+00000000  __TI_static_base__                                                                                                  
+00004b7f  __TI_zero_init                                                                                                      
+00004ba3  __abort_execution                                                                                                   
+00003c2d  __aeabi_cdcmpeq                                                                                                     
+00003c2d  __aeabi_cdcmple                                                                                                     
+00003cb3  __aeabi_cdrcmple                                                                                                    
+000044f9  __aeabi_d2iz                                                                                                        
+00002873  __aeabi_dadd                                                                                                        
+00003169  __aeabi_ddiv                                                                                                        
+000035f7  __aeabi_dmul                                                                                                        
+00002869  __aeabi_dsub                                                                                                        
+000047c5  __aeabi_i2d                                                                                                         
+00004175  __aeabi_idiv                                                                                                        
+00001227  __aeabi_idiv0                                                                                                       
+00004175  __aeabi_idivmod                                                                                                     
+00003db7  __aeabi_memclr                                                                                                      
+00003db7  __aeabi_memclr4                                                                                                     
+00003db7  __aeabi_memclr8                                                                                                     
+00003af7  __aeabi_memcpy                                                                                                      
+00003af7  __aeabi_memcpy4                                                                                                     
+00003af7  __aeabi_memcpy8                                                                                                     
+00003db9  __aeabi_memset                                                                                                      
+00003db9  __aeabi_memset4                                                                                                     
+00003db9  __aeabi_memset8                                                                                                     
+00001ee3  __aeabi_uldivmod                                                                                                    
+ffffffff  __binit__                                                                                                           
+ffffffff  __c_args__                                                                                                          
+00004b9d  __cxa_pure_virtual                                                                                                  
+0000329f  __mpu_init                                                                                                          
+2000fe00  __stack                                                                                                             
+00002e1f  __sti___12_joystick_cpp_040711aa                                                                                    
+0000493d  _args_main                                                                                                          
+00004231  _c_int00                                                                                                            
+00004bac  _ctypes_                                                                                                            
+0000264b  _gotoLPM0                                                                                                           
+200009e0  _lock                                                                                                               
+0000498f  _nop                                                                                                                
+00004987  _register_lock                                                                                                      
+00004981  _register_unlock                                                                                                    
+00002591  _rxChar                                                                                                             
+000023b7  _sleepTimer                                                                                                         
+200005a8  _sys_memory                                                                                                         
+000036f3  _system_post_cinit                                                                                                  
+00004ba7  _system_pre_init                                                                                                    
+200009d8  _timesUp                                                                                                            
+0000254f  _txChar                                                                                                             
+200009b8  _uartReady                                                                                                          
+200000e4  _uartRxBuffer                                                                                                       
+200009a8  _uartRxInIndex                                                                                                      
+200009ac  _uartRxOutIndex                                                                                                     
+200002e4  _uartTxBuffer                                                                                                       
+200009b0  _uartTxInIndex                                                                                                      
+200009b4  _uartTxOutIndex                                                                                                     
+200009e4  _unlock                                                                                                             
+00004289  abort                                                                                                               
+20000598  angular                                                                                                             
+00004419  atoi                                                                                                                
+ffffffff  binit                                                                                                               
+000015c9  calloc                                                                                                              
+00004465  copy_in                                                                                                             
+00004995  copysign                                                                                                            
+00004995  copysignl                                                                                                           
+200009e8  errno                                                                                                               
+00004291  exit                                                                                                                
+00001313  free                                                                                                                
+00004051  frexp                                                                                                               
+00004051  frexpl                                                                                                              
+20000000  g_pfnRAMVectors                                                                                                     
+000022c9  initializeClocks                                                                                                    
+000043cd  initializeLed                                                                                                       
+000025cb  initializeUart                                                                                                      
+00000000  interruptVectors                                                                                                    
+000036f5  ldexp                                                                                                               
+000036f5  ldexpl                                                                                                              
+000042d9  ltoa                                                                                                                
+00002dbb  main                                                                                                                
+200009ec  main_func_sp                                                                                                        
+000012a9  malloc                                                                                                              
+000014dd  memalign                                                                                                            
+000048bf  memccpy                                                                                                             
+00003af7  memcpy                                                                                                              
+00003dbf  memset                                                                                                              
+00001229  minit                                                                                                               
+2000058c  msg                                                                                                                 
+200004e4  msg_buffer                                                                                                          
+000023c5  mySleep                                                                                                             
+00002429  mySleepMs                                                                                                           
+200005a0  orange                                                                                                              
+20000578  pub                                                                                                                 
+000013d5  realloc                                                                                                             
+200005a1  red                                                                                                                 
+000036f5  scalbn                                                                                                              
+000036f5  scalbnl                                                                                                             
+00004115  sprintf                                                                                                             
+00004955  strchr                                                                                                              
+000049a9  strlen                                                                                                              
+20000534  sub                                                                                                                 
+200009d4  tickCount                                                                                                           
+000043df  toggleLed                                                                                                           
+00004403  turnOffLed                                                                                                          
+000043f1  turnOnLed                                                                                                           
+00004e2c  uartConfig                                                                                                          
+2000059c  vel                                                                                                                 
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address   name                                                                                                                
+-------   ----                                                                                                                
+00000000  __TI_static_base__                                                                                                  
+00000000  interruptVectors                                                                                                    
+00000200  __STACK_SIZE                                                                                                        
+00000400  __SYSMEM_SIZE                                                                                                       
+00000931  __TI_printfi                                                                                                        
+00001227  __aeabi_idiv0                                                                                                       
+00001229  minit                                                                                                               
+000012a9  malloc                                                                                                              
+00001313  free                                                                                                                
+000013d5  realloc                                                                                                             
+000014dd  memalign                                                                                                            
+000015c9  calloc                                                                                                              
+000015f9  SystemCoreClockUpdate                                                                                               
+0000186d  SystemInit                                                                                                          
+00001925  _ZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EE8spinOnceEv                                            
+00001c4b  _ZN14rosserial_msgs20RequestParamResponse11deserializeEPh                                                           
+00001ee3  __aeabi_uldivmod                                                                                                    
+000020d7  _ZNK14rosserial_msgs20RequestParamResponse9serializeEPh                                                             
+000022c9  initializeClocks                                                                                                    
+00002381  SysTick_Handler                                                                                                     
+00002381  SysTick_Handler                                                                                                     
+000023b7  _sleepTimer                                                                                                         
+000023c5  mySleep                                                                                                             
+00002429  mySleepMs                                                                                                           
+000024b5  EUSCIA0_IRQHandler                                                                                                  
+000024b5  EUSCIA0_IRQHandler                                                                                                  
+0000254f  _txChar                                                                                                             
+00002591  _rxChar                                                                                                             
+000025cb  initializeUart                                                                                                      
+0000264b  _gotoLPM0                                                                                                           
+0000269d  _ZN11sensor_msgs3Joy11deserializeEPh                                                                                
+00002869  __aeabi_dsub                                                                                                        
+00002873  __aeabi_dadd                                                                                                        
+00002a1f  _ZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EE15negotiateTopicsEv                                    
+00002bb5  _ZN14rosserial_msgs9TopicInfo11deserializeEPh                                                                       
+00002d45  _Z9joyDataCbRKN11sensor_msgs3JoyE                                                                                   
+00002dbb  main                                                                                                                
+00002e1f  __sti___12_joystick_cpp_040711aa                                                                                    
+00002ebd  _ZNK11sensor_msgs3Joy9serializeEPh                                                                                  
+00003029  _ZN8std_msgs6Header11deserializeEPh                                                                                 
+00003169  __aeabi_ddiv                                                                                                        
+0000329f  __mpu_init                                                                                                          
+000032a1  _ZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EE7publishEiPKNS_3MsgE                                   
+000033cd  _ZNK14rosserial_msgs9TopicInfo9serializeEPh                                                                         
+000034e3  _ZNK8std_msgs6Header9serializeEPh                                                                                   
+000035f7  __aeabi_dmul                                                                                                        
+000036f3  _system_post_cinit                                                                                                  
+000036f5  ldexp                                                                                                               
+000036f5  ldexpl                                                                                                              
+000036f5  scalbn                                                                                                              
+000036f5  scalbnl                                                                                                             
+000037f1  _ZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EEC1Ev                                                   
+000038dd  _ZN3ros4Time8fromNSecEi                                                                                             
+00003909  _ZN3ros4TimepLERKNS_8DurationE                                                                                      
+00003935  _ZN3ros4TimemIERKNS_8DurationE                                                                                      
+00003961  _ZN3ros16normalizeSecNSecERjS0_                                                                                     
+0000399d  _ZSt21__gen_dummy_typeinfosv                                                                                        
+000039a5  _ZNSt9type_infoD1Ev                                                                                                 
+000039a5  _ZNSt9type_infoD2Ev                                                                                                 
+000039a7  _ZNSt9type_infoD0Ev                                                                                                 
+000039af  _ZNKSt9type_info4nameEv                                                                                             
+000039b3  _ZNKSt9type_infoneERKS_                                                                                             
+000039c9  _ZNKSt9type_infoeqERKS_                                                                                             
+000039df  _ZNKSt9type_info6beforeERKS_                                                                                        
+000039ed  _ZN10__cxxabiv129__pointer_to_member_type_infoD1Ev                                                                  
+000039ed  _ZN10__cxxabiv129__pointer_to_member_type_infoD2Ev                                                                  
+000039ef  _ZN10__cxxabiv129__pointer_to_member_type_infoD0Ev                                                                  
+000039f7  _ZN10__cxxabiv123__fundamental_type_infoD1Ev                                                                        
+000039f7  _ZN10__cxxabiv123__fundamental_type_infoD2Ev                                                                        
+000039f9  _ZN10__cxxabiv123__fundamental_type_infoD0Ev                                                                        
+00003a01  _ZN10__cxxabiv121__vmi_class_type_infoD1Ev                                                                          
+00003a01  _ZN10__cxxabiv121__vmi_class_type_infoD2Ev                                                                          
+00003a03  _ZN10__cxxabiv121__vmi_class_type_infoD0Ev                                                                          
+00003a0b  _ZN10__cxxabiv120__si_class_type_infoD1Ev                                                                           
+00003a0b  _ZN10__cxxabiv120__si_class_type_infoD2Ev                                                                           
+00003a0d  _ZN10__cxxabiv120__si_class_type_infoD0Ev                                                                           
+00003a15  _ZN10__cxxabiv120__function_type_infoD1Ev                                                                           
+00003a15  _ZN10__cxxabiv120__function_type_infoD2Ev                                                                           
+00003a17  _ZN10__cxxabiv120__function_type_infoD0Ev                                                                           
+00003a1f  _ZN10__cxxabiv119__pointer_type_infoD1Ev                                                                            
+00003a1f  _ZN10__cxxabiv119__pointer_type_infoD2Ev                                                                            
+00003a21  _ZN10__cxxabiv119__pointer_type_infoD0Ev                                                                            
+00003a29  _ZN10__cxxabiv117__pbase_type_infoD1Ev                                                                              
+00003a29  _ZN10__cxxabiv117__pbase_type_infoD2Ev                                                                              
+00003a2b  _ZN10__cxxabiv117__pbase_type_infoD0Ev                                                                              
+00003a33  _ZN10__cxxabiv117__class_type_infoD1Ev                                                                              
+00003a33  _ZN10__cxxabiv117__class_type_infoD2Ev                                                                              
+00003a35  _ZN10__cxxabiv117__class_type_infoD0Ev                                                                              
+00003a3d  _ZN10__cxxabiv117__array_type_infoD1Ev                                                                              
+00003a3d  _ZN10__cxxabiv117__array_type_infoD2Ev                                                                              
+00003a3f  _ZN10__cxxabiv117__array_type_infoD0Ev                                                                              
+00003a47  _ZN10__cxxabiv116__enum_type_infoD1Ev                                                                               
+00003a47  _ZN10__cxxabiv116__enum_type_infoD2Ev                                                                               
+00003a49  _ZN10__cxxabiv116__enum_type_infoD0Ev                                                                               
+00003a59  _ZN8std_msgs4Time11deserializeEPh                                                                                   
+00003af7  __aeabi_memcpy                                                                                                      
+00003af7  __aeabi_memcpy4                                                                                                     
+00003af7  __aeabi_memcpy8                                                                                                     
+00003af7  memcpy                                                                                                              
+00003b93  _ZNK8std_msgs4Time9serializeEPh                                                                                     
+00003c2d  __aeabi_cdcmpeq                                                                                                     
+00003c2d  __aeabi_cdcmple                                                                                                     
+00003cb3  __aeabi_cdrcmple                                                                                                    
+00003d39  _ZN14rosserial_msgs3Log11deserializeEPh                                                                             
+00003db7  __aeabi_memclr                                                                                                      
+00003db7  __aeabi_memclr4                                                                                                     
+00003db7  __aeabi_memclr8                                                                                                     
+00003db9  __aeabi_memset                                                                                                      
+00003db9  __aeabi_memset4                                                                                                     
+00003db9  __aeabi_memset8                                                                                                     
+00003dbf  memset                                                                                                              
+00003e31  _ZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EE8syncTimeEPh                                           
+00003ea5  __TI_auto_init                                                                                                      
+00003f15  _ZN8std_msgs6String11deserializeEPh                                                                                 
+00003f83  __TI_decompress_lzss                                                                                                
+00003fed  Interrupt_enableInterrupt                                                                                           
+00004051  frexp                                                                                                               
+00004051  frexpl                                                                                                              
+000040b5  _ZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EE6setNowERNS_4TimeE                                     
+00004115  sprintf                                                                                                             
+00004175  __aeabi_idiv                                                                                                        
+00004175  __aeabi_idivmod                                                                                                     
+000041d3  _ZNK14rosserial_msgs3Log9serializeEPh                                                                               
+00004231  _c_int00                                                                                                            
+00004285  C$$EXIT                                                                                                             
+00004289  abort                                                                                                               
+00004291  exit                                                                                                                
+000042d9  ltoa                                                                                                                
+0000432d  _ZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EE9advertiseERNS_9PublisherE                             
+0000437f  _ZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EE9subscribeINS_10SubscriberIN11sensor_msgs3JoyEvEEEEbRT_
+000043cd  initializeLed                                                                                                       
+000043df  toggleLed                                                                                                           
+000043f1  turnOnLed                                                                                                           
+00004403  turnOffLed                                                                                                          
+00004419  atoi                                                                                                                
+00004465  copy_in                                                                                                             
+000044b1  _ZNK8std_msgs6String9serializeEPh                                                                                   
+000044f9  __aeabi_d2iz                                                                                                        
+00004541  _ZN3ros10SubscriberIN11sensor_msgs3JoyEvEC1EPKcPFvRKS2_Ei                                                           
+00004581  _ZN14rosserial_msgs20RequestParamResponseC1Ev                                                                       
+000045bd  _ZN14rosserial_msgs9TopicInfoC1Ev                                                                                   
+000045f9  _ZN3ros3Msg8arrToVarIjPhEEvRT_T0_                                                                                   
+00004635  _ZN11sensor_msgs3JoyC1Ev                                                                                            
+0000466d  Interrupt_registerInterrupt                                                                                         
+000046a1  _ZN15Msp432CHardware5writeEPhi                                                                                      
+000046d5  _ZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EE3logEcPKc                                              
+00004709  _ZN3ros3Msg8varToArrIPhjEEvT_T0_                                                                                    
+00004739  _ZN8std_msgs6HeaderC1Ev                                                                                             
+00004769  _ZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EE15requestSyncTimeEv                                    
+00004797  _ZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EE8initNodeEv                                            
+000047c5  __aeabi_i2d                                                                                                         
+000047f5  _ZN14rosserial_msgs3LogC1Ev                                                                                         
+0000481d  _ZN3ros9PublisherC1EPKcPNS_3MsgEi                                                                                   
+00004841  _ZN8std_msgs6StringC1Ev                                                                                             
+00004865  _ZN8std_msgs4TimeC1Ev                                                                                               
+00004885  _ZN3ros9Publisher7publishEPKNS_3MsgE                                                                                
+000048a3  _ZN3ros10SubscriberIN11sensor_msgs3JoyEvE8callbackEPh                                                               
+000048bf  memccpy                                                                                                             
+000048dd  _ZN3ros11Subscriber_C1Ev                                                                                            
+000048f5  _ZN3ros15NodeHandleBase_C1Ev                                                                                        
+0000490d  _ZN3ros3MsgC1Ev                                                                                                     
+00004925  _ZN3ros4TimeC1Ev                                                                                                    
+0000493d  _args_main                                                                                                          
+00004955  strchr                                                                                                              
+0000496d  _ZN15Msp432CHardware4timeEv                                                                                         
+00004981  _register_unlock                                                                                                    
+00004987  _register_lock                                                                                                      
+0000498f  _nop                                                                                                                
+00004995  copysign                                                                                                            
+00004995  copysignl                                                                                                           
+000049a9  strlen                                                                                                              
+000049bd  _ZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EE8logerrorEPKc                                          
+000049cf  Timer32_registerInterrupt                                                                                           
+000049e1  _ZN11sensor_msgs3Joy6getMD5Ev                                                                                       
+000049f1  _ZN11sensor_msgs3Joy7getTypeEv                                                                                      
+00004a01  _ZN14rosserial_msgs20RequestParamResponse6getMD5Ev                                                                  
+00004a11  _ZN14rosserial_msgs20RequestParamResponse7getTypeEv                                                                 
+00004a21  _ZN14rosserial_msgs3Log6getMD5Ev                                                                                    
+00004a31  _ZN14rosserial_msgs3Log7getTypeEv                                                                                   
+00004a41  _ZN14rosserial_msgs9TopicInfo6getMD5Ev                                                                              
+00004a51  _ZN14rosserial_msgs9TopicInfo7getTypeEv                                                                             
+00004a61  _ZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EE9connectedEv                                           
+00004a71  _ZN8std_msgs4Time6getMD5Ev                                                                                          
+00004a81  _ZN8std_msgs4Time7getTypeEv                                                                                         
+00004a91  _ZN8std_msgs6Header6getMD5Ev                                                                                        
+00004aa1  _ZN8std_msgs6Header7getTypeEv                                                                                       
+00004ab1  _ZN8std_msgs6String6getMD5Ev                                                                                        
+00004ac1  _ZN8std_msgs6String7getTypeEv                                                                                       
+00004ad1  _ZN15Msp432CHardware4initEv                                                                                         
+00004adf  _ZN15Msp432CHardware5delayEj                                                                                        
+00004aed  _ZN3ros10SubscriberIN11sensor_msgs3JoyEvE10getMsgTypeEv                                                             
+00004afb  _ZN3ros10SubscriberIN11sensor_msgs3JoyEvE15getEndpointTypeEv                                                        
+00004b09  _ZN3ros10SubscriberIN11sensor_msgs3JoyEvE9getMsgMD5Ev                                                               
+00004b17  _ZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EE11getHardwareEv                                        
+00004b25  _ZN3ros9Publisher15getEndpointTypeEv                                                                                
+00004b33  __TI_decompress_none                                                                                                
+00004b41  Reset_Handler                                                                                                       
+00004b4d  ADC14_IRQHandler                                                                                                    
+00004b4d  AES256_IRQHandler                                                                                                   
+00004b4d  BusFault_Handler                                                                                                    
+00004b4d  COMP_E0_IRQHandler                                                                                                  
+00004b4d  COMP_E1_IRQHandler                                                                                                  
+00004b4d  CS_IRQHandler                                                                                                       
+00004b4d  DMA_ERR_IRQHandler                                                                                                  
+00004b4d  DMA_INT0_IRQHandler                                                                                                 
+00004b4d  DMA_INT1_IRQHandler                                                                                                 
+00004b4d  DMA_INT2_IRQHandler                                                                                                 
+00004b4d  DMA_INT3_IRQHandler                                                                                                 
+00004b4d  DebugMon_Handler                                                                                                    
+00004b4d  Default_Handler                                                                                                     
+00004b4d  EUSCIA1_IRQHandler                                                                                                  
+00004b4d  EUSCIA2_IRQHandler                                                                                                  
+00004b4d  EUSCIA3_IRQHandler                                                                                                  
+00004b4d  EUSCIB0_IRQHandler                                                                                                  
+00004b4d  EUSCIB1_IRQHandler                                                                                                  
+00004b4d  EUSCIB2_IRQHandler                                                                                                  
+00004b4d  EUSCIB3_IRQHandler                                                                                                  
+00004b4d  FLCTL_IRQHandler                                                                                                    
+00004b4d  FPU_IRQHandler                                                                                                      
+00004b4d  HardFault_Handler                                                                                                   
+00004b4d  MemManage_Handler                                                                                                   
+00004b4d  NMI_Handler                                                                                                         
+00004b4d  PCM_IRQHandler                                                                                                      
+00004b4d  PORT1_IRQHandler                                                                                                    
+00004b4d  PORT2_IRQHandler                                                                                                    
+00004b4d  PORT3_IRQHandler                                                                                                    
+00004b4d  PORT4_IRQHandler                                                                                                    
+00004b4d  PORT5_IRQHandler                                                                                                    
+00004b4d  PORT6_IRQHandler                                                                                                    
+00004b4d  PSS_IRQHandler                                                                                                      
+00004b4d  PendSV_Handler                                                                                                      
+00004b4d  RTC_C_IRQHandler                                                                                                    
+00004b4d  SVC_Handler                                                                                                         
+00004b4d  T32_INT1_IRQHandler                                                                                                 
+00004b4d  T32_INT2_IRQHandler                                                                                                 
+00004b4d  T32_INTC_IRQHandler                                                                                                 
+00004b4d  TA0_0_IRQHandler                                                                                                    
+00004b4d  TA0_N_IRQHandler                                                                                                    
+00004b4d  TA1_0_IRQHandler                                                                                                    
+00004b4d  TA1_N_IRQHandler                                                                                                    
+00004b4d  TA2_0_IRQHandler                                                                                                    
+00004b4d  TA2_N_IRQHandler                                                                                                    
+00004b4d  TA3_0_IRQHandler                                                                                                    
+00004b4d  TA3_N_IRQHandler                                                                                                    
+00004b4d  UsageFault_Handler                                                                                                  
+00004b4d  WDT_A_IRQHandler                                                                                                    
+00004b4f  _ZN15Msp432CHardwareC1Ev                                                                                            
+00004b5b  _ZN3ros11Subscriber_C2Ev                                                                                            
+00004b67  _ZN3ros15NodeHandleBase_C2Ev                                                                                        
+00004b73  _ZN3ros3MsgC2Ev                                                                                                     
+00004b7f  __TI_zero_init                                                                                                      
+00004b8b  _ZN15Msp432CHardware4readEv                                                                                         
+00004b95  _ZdlPv                                                                                                              
+00004b9d  __cxa_pure_virtual                                                                                                  
+00004ba3  __abort_execution                                                                                                   
+00004ba7  _system_pre_init                                                                                                    
+00004bac  _ctypes_                                                                                                            
+00004cad  _ZTSe                                                                                                               
+00004caf  _ZZN14rosserial_msgs3LogC1EvEs                                                                                      
+00004cf0  _ZTSN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EEE                                                    
+00004d2d  _ZZN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EE7publishEiPKNS_3MsgEEs                                
+00004d66  _ZTSN14rosserial_msgs20RequestParamResponseE                                                                        
+00004d8f  _ZTSN3ros10SubscriberIN11sensor_msgs3JoyEvEE                                                                        
+00004db8  _ZTSN10__cxxabiv123__fundamental_type_infoE                                                                         
+00004de0  _ZTSN10__cxxabiv120__si_class_type_infoE                                                                            
+00004e05  _ZTSN10__cxxabiv119__pointer_type_infoE                                                                             
+00004e29  _ZZN14rosserial_msgs9TopicInfoC1EvEs                                                                                
+00004e2a  _ZZN8std_msgs6HeaderC1EvEs                                                                                          
+00004e2b  _ZZN8std_msgs6StringC1EvEs                                                                                          
+00004e2c  uartConfig                                                                                                          
+00004e50  _ZTSN10__cxxabiv117__class_type_infoE                                                                               
+00004e72  _ZTSN10__cxxabiv117__pbase_type_infoE                                                                               
+00004e94  _ZZN11sensor_msgs3Joy6getMD5EvEs                                                                                    
+00004eb5  _ZZN14rosserial_msgs20RequestParamResponse6getMD5EvEs                                                               
+00004ed6  _ZZN14rosserial_msgs3Log6getMD5EvEs                                                                                 
+00004ef7  _ZZN14rosserial_msgs9TopicInfo6getMD5EvEs                                                                           
+00004f18  _ZZN8std_msgs4Time6getMD5EvEs                                                                                       
+00004f39  _ZZN8std_msgs6Header6getMD5EvEs                                                                                     
+00004f5a  _ZZN8std_msgs6String6getMD5EvEs                                                                                     
+00004f7b  _ZTSN14rosserial_msgs9TopicInfoE                                                                                    
+00004fb4  _ZZN14rosserial_msgs9TopicInfo7getTypeEvEs                                                                          
+00004fcd  _ZTSN3ros15NodeHandleBase_E                                                                                         
+00004fe8  _ZTVN11sensor_msgs3JoyE                                                                                             
+00005000  _ZTVN14rosserial_msgs20RequestParamResponseE                                                                        
+00005018  _ZTVN14rosserial_msgs3LogE                                                                                          
+00005030  _ZTVN14rosserial_msgs9TopicInfoE                                                                                    
+00005048  _ZTVN3ros10SubscriberIN11sensor_msgs3JoyEvEE                                                                        
+00005060  _ZTVN3ros11Subscriber_E                                                                                             
+00005078  _ZTVN3ros3MsgE                                                                                                      
+00005090  _ZTVN8std_msgs4TimeE                                                                                                
+000050a8  _ZTVN8std_msgs6HeaderE                                                                                              
+000050c0  _ZTVN8std_msgs6StringE                                                                                              
+000050d8  _ZTSN14rosserial_msgs3LogE                                                                                          
+000050ef  _ZTSN11sensor_msgs3JoyE                                                                                             
+00005103  _ZTSN3ros11Subscriber_E                                                                                             
+00005118  _ZTVN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EEE                                                    
+0000512c  _ZTVN3ros15NodeHandleBase_E                                                                                         
+00005140  _ZZN14rosserial_msgs3Log7getTypeEvEs                                                                                
+00005153  _ZTSN8std_msgs6HeaderE                                                                                              
+00005166  _ZTSN8std_msgs6StringE                                                                                              
+00005179  _ZTSN8std_msgs4TimeE                                                                                                
+0000518a  _ZZN11sensor_msgs3Joy7getTypeEvEs                                                                                   
+0000519a  _ZZN8std_msgs6Header7getTypeEvEs                                                                                    
+000051aa  _ZZN8std_msgs6String7getTypeEvEs                                                                                    
+000051bc  _ZTIPKe                                                                                                             
+000051cc  _ZTVN10__cxxabiv117__class_type_infoE                                                                               
+000051dc  _ZTVN10__cxxabiv119__pointer_type_infoE                                                                             
+000051ec  _ZTVN10__cxxabiv120__si_class_type_infoE                                                                            
+000051fc  _ZTVN10__cxxabiv123__fundamental_type_infoE                                                                         
+0000520c  _ZZN8std_msgs4Time7getTypeEvEs                                                                                      
+0000521a  _ZTSSt9type_info                                                                                                    
+00005228  _ZTIN10__cxxabiv117__class_type_infoE                                                                               
+00005234  _ZTIN10__cxxabiv117__pbase_type_infoE                                                                               
+00005240  _ZTIN10__cxxabiv119__pointer_type_infoE                                                                             
+0000524c  _ZTIN10__cxxabiv120__si_class_type_infoE                                                                            
+00005258  _ZTIN10__cxxabiv123__fundamental_type_infoE                                                                         
+00005264  _ZTIN11sensor_msgs3JoyE                                                                                             
+00005270  _ZTIN14rosserial_msgs20RequestParamResponseE                                                                        
+0000527c  _ZTIN14rosserial_msgs3LogE                                                                                          
+00005288  _ZTIN14rosserial_msgs9TopicInfoE                                                                                    
+00005294  _ZTIN3ros10SubscriberIN11sensor_msgs3JoyEvEE                                                                        
+000052a0  _ZTIN3ros11NodeHandle_I15Msp432CHardwareLi25ELi25ELi512ELi512EEE                                                    
+000052ac  _ZTIN8std_msgs4TimeE                                                                                                
+000052b8  _ZTIN8std_msgs6HeaderE                                                                                              
+000052c4  _ZTIN8std_msgs6StringE                                                                                              
+000052d0  _ZTSN3ros3MsgE                                                                                                      
+000052dc  _ZTIN3ros11Subscriber_E                                                                                             
+000052e4  _ZTIN3ros15NodeHandleBase_E                                                                                         
+000052ec  _ZTIN3ros3MsgE                                                                                                      
+000052f4  _ZTISt9type_info                                                                                                    
+000052fc  _ZTIe                                                                                                               
+00005304  _ZTSPKe                                                                                                             
+00005308  SHT$$INIT_ARRAY$$Base                                                                                               
+0000530c  SHT$$INIT_ARRAY$$Limit                                                                                              
+00005338  __TI_Handler_Table_Base                                                                                             
+00005344  __TI_Handler_Table_Limit                                                                                            
+00005358  __TI_CINIT_Base                                                                                                     
+00005370  __TI_CINIT_Limit                                                                                                    
+20000000  g_pfnRAMVectors                                                                                                     
+200000e4  _uartRxBuffer                                                                                                       
+200002e4  _uartTxBuffer                                                                                                       
+200004e4  msg_buffer                                                                                                          
+20000534  sub                                                                                                                 
+20000578  pub                                                                                                                 
+2000058c  msg                                                                                                                 
+20000594  _ZSt16__dummy_typeinfo                                                                                              
+20000598  angular                                                                                                             
+2000059c  vel                                                                                                                 
+200005a0  orange                                                                                                              
+200005a1  red                                                                                                                 
+200005a8  _sys_memory                                                                                                         
+200009a8  _uartRxInIndex                                                                                                      
+200009ac  _uartRxOutIndex                                                                                                     
+200009b0  _uartTxInIndex                                                                                                      
+200009b4  _uartTxOutIndex                                                                                                     
+200009b8  _uartReady                                                                                                          
+200009bc  __TI_cleanup_ptr                                                                                                    
+200009c0  __TI_dtors_ptr                                                                                                      
+200009c4  __TI_enable_exit_profile_output                                                                                     
+200009d4  tickCount                                                                                                           
+200009d8  _timesUp                                                                                                            
+200009e0  _lock                                                                                                               
+200009e4  _unlock                                                                                                             
+200009e8  errno                                                                                                               
+200009ec  main_func_sp                                                                                                        
+200009f0  SystemCoreClock                                                                                                     
+2000fe00  __stack                                                                                                             
+20010000  __STACK_END                                                                                                         
+4000480c  WDTCTL_SYM                                                                                                          
+ffffffff  __TI_pprof_out_hndl                                                                                                 
+ffffffff  __TI_prof_data_size                                                                                                 
+ffffffff  __TI_prof_data_start                                                                                                
+ffffffff  __binit__                                                                                                           
+ffffffff  __c_args__                                                                                                          
+ffffffff  binit                                                                                                               
+
+[375 symbols]

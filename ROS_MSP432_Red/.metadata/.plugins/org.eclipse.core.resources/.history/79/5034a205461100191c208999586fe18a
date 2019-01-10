@@ -1,0 +1,59 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+# Add inputs and outputs from these tool invocations to the build variables 
+CPP_SRCS += \
+../src/duration.cpp \
+../src/msp432_serial_io.cpp \
+../src/time.cpp 
+
+CMD_SRCS += \
+../src/msp432p401r.cmd 
+
+C_SRCS += \
+../src/clocks.c \
+../src/my_uart.c 
+
+C_DEPS += \
+./src/clocks.d \
+./src/my_uart.d 
+
+OBJS += \
+./src/clocks.obj \
+./src/duration.obj \
+./src/msp432_serial_io.obj \
+./src/my_uart.obj \
+./src/time.obj 
+
+CPP_DEPS += \
+./src/duration.d \
+./src/msp432_serial_io.d \
+./src/time.d 
+
+OBJS__QUOTED += \
+"src/clocks.obj" \
+"src/duration.obj" \
+"src/msp432_serial_io.obj" \
+"src/my_uart.obj" \
+"src/time.obj" 
+
+C_DEPS__QUOTED += \
+"src/clocks.d" \
+"src/my_uart.d" 
+
+CPP_DEPS__QUOTED += \
+"src/duration.d" \
+"src/msp432_serial_io.d" \
+"src/time.d" 
+
+C_SRCS__QUOTED += \
+"../src/clocks.c" \
+"../src/my_uart.c" 
+
+CPP_SRCS__QUOTED += \
+"../src/duration.cpp" \
+"../src/msp432_serial_io.cpp" \
+"../src/time.cpp" 
+
+

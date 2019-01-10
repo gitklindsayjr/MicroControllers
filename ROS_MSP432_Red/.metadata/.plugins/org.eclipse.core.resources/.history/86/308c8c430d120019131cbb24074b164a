@@ -1,0 +1,88 @@
+/*
+ * Copyright (c) 2017, Kenneth Lindsay
+ * All rights reserved.
+ * Author: Kenneth Lindsay
+ *
+ * Redistribution and use in source and binary forms, with or without modification, are permitted provided that the
+ * following conditions are met:
+ *
+ *   1. Redistributions of source code must retain the above copyright notice, this list of conditions and the
+ *      following disclaimer.
+ *   2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the
+ *      following disclaimer in the documentation and/or other materials provided with the distribution.
+ *   3. Neither the name of the copyright holder nor the names of its contributors may be used to endorse or promote
+ *      products derived from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED
+ * WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
+ * GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+ * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+ * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
+
+#include <ros.h>
+#include <sensor_msgs/Joy.h>
+#include <std_msgs/String.h>
+#include <stdio.h>
+
+extern "C"
+{
+    #include "led.h"
+}
+
+int  velocity, angular;
+bool red, orange;
+
+void joyDataCb(const sensor_msgs::Joy &joy)
+{
+    angular = 1000*joy.axes[0];
+    velocity = 1000*joy.axes[1];
+    red = joy.buttons[1];
+    orange = joy.buttons[3];
+    if(red)
+        turnOnLed();
+    if(orange)
+        turnOffLed();
+}
+
+std_msgs::String msg;
+char msg_buffer[80];
+
+/* Subscribing and publishing produces buffer overflows which is probably do to no flow control
+ * So don't expect publishing to work well.
+ros::Publisher pub("joy_messages", &msg);
+ */
+
+ros::NodeHandle nh;
+ros::Subscriber<sensor_msgs::Joy> sub("joy", joyDataCb);
+
+void main()
+{
+// todo: Initialize PWM output here
+//    initializePwm();
+//    setPwmPulseWidth(PWM_REGISTER_1, PWM_ZERO);
+    initializeLed();
+
+    nh.initNode();
+    nh.subscribe(sub);
+
+/* Doesn't work well with subscribing most probable cause is buffer overflow to do lack of flow control
+    sprintf(msg_buffer, "Axes[0]: %d, Axes[1]: %d, Button[1]: %d, Button[3]: %d", angular, vel, red, orange);
+    Use led's to signal joystick activity.
+    nh.advertise(pub);
+*/
+    while(true)
+    {
+//        msg.data = msg_buffer;
+//        pub.publish(&msg); // Doesn't work well, conflicts with subscriber
+
+// Todo:  Add PID software and PWM output here to handle angular an velocity variables
+//    Scale angular variable to PWM pulse width in us, value is between PWM_MAX_US and PWM_MIN_US
+//    Standard RC PWM refresh rate is 50Hz or PWM_20MS
+//    setPwmPulseWidth(PWM_REGISTER_1, angular);
+        nh.spinOnce();
+        nh.getHardware()->delay(20); // Loop rate is 50hz, Delay 20ms delays longer then 100 ms will require re-sync
+    }
+}

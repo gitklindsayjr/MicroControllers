@@ -1,0 +1,9 @@
+eclipse.preferences.version=1
+pathvariable.MSP432_DRIVERLIB_LIB=/home/pops/ti/simplelink_msp432p4_sdk_2_20_00_12/source/ti/devices/msp432p4xx/driverlib/ccs
+pathvariable.MSP432_DRIVERLIB_SRC=/home/pops/ti/simplelink_msp432p4_sdk_2_20_00_12/source/ti/devices/msp432p4xx/driverlib
+pathvariable.ROS_LIB=/opt/ros/kinetic/include
+pathvariable.ROS_MSP_HWD_LIB=/home/pops/MicroControllers/ROS_MSP432_Red/RosMspHwdLib/Debug
+pathvariable.ROS_MSP_HWD_SRC=/home/pops/MicroControllers/ROS_MSP432_Red/RosMspHwdLib/src
+pathvariable.ROS_TI_LIB=/home/pops/ti/RosLib
+pathvariable.SIMPLELINK=/home/pops/ti/simplelink_msp432p4_sdk_2_20_00_12/source
+version=1

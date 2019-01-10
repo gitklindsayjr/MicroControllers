@@ -1,0 +1,50 @@
+#include <ros.h>
+#include <src/ros_msp432_io.h>
+#include <std_msgs/String.h>
+#include <stdio.h>
+
+ros::NodeHandle nh;
+std_msgs::String rxMsg;
+std_msgs::String txMsg;
+bool msgReceived = false;
+
+// Declare our interface object
+MSP432_Interface msp;
+
+// Callback for our subscriber
+void messageCb(const std_msgs::String &msg)
+{
+     if(!msgReceived) // Process one message at a time
+         rxMsg = msg; // don't save others
+     msgReceived = true;
+}
+
+void main()
+{
+    unsigned command;
+    nh.initNode();
+
+    // Create our publisher object to send messages to Qt's subscriber
+    ros::Publisher serialIo_pub("msp432_pub", &txMsg);
+    nh.advertise(serialIo_pub);
+    // Create our subscriber to handle msp432 messages from Qt's publisher
+    ros::Subscriber<std_msgs::String> serialIo_sub("qt_pub", &messageCb);
+    nh.subscribe(serialIo_sub);
+
+    while(true)
+    {
+        nh.spinOnce();
+        if(msgReceived)
+        {
+            msp.messageStrPtr = (char *)rxMsg.data; // Let interface point to our string data
+            do
+            {   // Do multiple times we may have more then one command
+                command = msp.parseMessage();
+                msp.handleCommand(command, serialIo_pub, txMsg);
+            }while(command != NO_COMMAND);
+            msgReceived = false;
+        }
+        // Todo: serialIo_pub.pulish(&txMsg); // You could send your own stuff here
+        nh.getHardware()->delay(100);
+    }
+}

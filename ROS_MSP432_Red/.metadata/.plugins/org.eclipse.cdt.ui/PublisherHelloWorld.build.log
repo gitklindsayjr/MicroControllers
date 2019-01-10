@@ -1,0 +1,13 @@
+
+**** Clean-only build of configuration Debug for project PublisherHelloWorld ****
+
+/opt/ti/ccsv8/utils/bin/gmake -k -j 8 clean -O 
+ 
+rm -rf  "PublisherHelloWorld.hex"  "PublisherHelloWorld.out" 
+rm -rf "ccs/startup_msp432p401r_ccs.obj" "ccs/system_msp432p401r.obj" "src/hello_world.obj" 
+rm -rf "ccs/startup_msp432p401r_ccs.d" "ccs/system_msp432p401r.d" 
+rm -rf "src/hello_world.d" 
+Finished clean
+ 
+
+**** Build Finished ****

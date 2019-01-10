@@ -1,0 +1,1 @@
+"./ccs/startup_msp432p401r_ccs.obj" "./ccs/system_msp432p401r.obj" "./src/hello_world.obj" "../msp432p401r.cmd" -lRosMspHwdLib.lib -lmsp432p4xx_driverlib.lib -llibc.a 

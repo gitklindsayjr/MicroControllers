@@ -1,0 +1,40 @@
+
+**** Build of configuration Debug for project RosMspSerial_Io ****
+
+/opt/ti/ccsv8/utils/bin/gmake -k -j 8 all -O 
+ 
+Building file: "../src/msp432_serial_io.cpp"
+Invoking: ARM Compiler
+"/opt/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/pops/MicroControllers/ROS_MSP432_Red/RosLib" --include_path="/home/pops/MicroControllers/ROS_MSP432_Red/RosMspSerial_Io/src" --include_path="/home/pops/ti/simplelink_msp432p4_sdk_2_20_00_12/source" --include_path="/home/pops/ti/simplelink_msp432p4_sdk_2_20_00_12/source/ti/devices/msp432p4xx/driverlib" --include_path="/opt/ti/ccsv8/ccs_base/arm/include" --include_path="/opt/ti/ccsv8/ccs_base/arm/include/CMSIS" --include_path="/home/pops/MicroControllers/ROS_MSP432_Red/RosMspSerial_Io" --include_path="/opt/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include" --advice:power=all --define=LED_HEARTBEAT --define=LED_RX_BLINK --define=LED_TX_BLINK --define=__MSP432P401R__ -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="src/msp432_serial_io.d_raw" --obj_directory="src"  "../src/msp432_serial_io.cpp"
+Finished building: "../src/msp432_serial_io.cpp"
+ 
+Building file: "../src/time.cpp"
+Invoking: ARM Compiler
+"/opt/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/pops/MicroControllers/ROS_MSP432_Red/RosLib" --include_path="/home/pops/MicroControllers/ROS_MSP432_Red/RosMspSerial_Io/src" --include_path="/home/pops/ti/simplelink_msp432p4_sdk_2_20_00_12/source" --include_path="/home/pops/ti/simplelink_msp432p4_sdk_2_20_00_12/source/ti/devices/msp432p4xx/driverlib" --include_path="/opt/ti/ccsv8/ccs_base/arm/include" --include_path="/opt/ti/ccsv8/ccs_base/arm/include/CMSIS" --include_path="/home/pops/MicroControllers/ROS_MSP432_Red/RosMspSerial_Io" --include_path="/opt/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include" --advice:power=all --define=LED_HEARTBEAT --define=LED_RX_BLINK --define=LED_TX_BLINK --define=__MSP432P401R__ -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="src/time.d_raw" --obj_directory="src"  "../src/time.cpp"
+Finished building: "../src/time.cpp"
+ 
+Building file: "../src/duration.cpp"
+Invoking: ARM Compiler
+"/opt/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/pops/MicroControllers/ROS_MSP432_Red/RosLib" --include_path="/home/pops/MicroControllers/ROS_MSP432_Red/RosMspSerial_Io/src" --include_path="/home/pops/ti/simplelink_msp432p4_sdk_2_20_00_12/source" --include_path="/home/pops/ti/simplelink_msp432p4_sdk_2_20_00_12/source/ti/devices/msp432p4xx/driverlib" --include_path="/opt/ti/ccsv8/ccs_base/arm/include" --include_path="/opt/ti/ccsv8/ccs_base/arm/include/CMSIS" --include_path="/home/pops/MicroControllers/ROS_MSP432_Red/RosMspSerial_Io" --include_path="/opt/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include" --advice:power=all --define=LED_HEARTBEAT --define=LED_RX_BLINK --define=LED_TX_BLINK --define=__MSP432P401R__ -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="src/duration.d_raw" --obj_directory="src"  "../src/duration.cpp"
+"../src/duration.cpp", line 72 (col. 25): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+Finished building: "../src/duration.cpp"
+ 
+Building file: "../src/clocks.c"
+Invoking: ARM Compiler
+"/opt/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/pops/MicroControllers/ROS_MSP432_Red/RosLib" --include_path="/home/pops/MicroControllers/ROS_MSP432_Red/RosMspSerial_Io/src" --include_path="/home/pops/ti/simplelink_msp432p4_sdk_2_20_00_12/source" --include_path="/home/pops/ti/simplelink_msp432p4_sdk_2_20_00_12/source/ti/devices/msp432p4xx/driverlib" --include_path="/opt/ti/ccsv8/ccs_base/arm/include" --include_path="/opt/ti/ccsv8/ccs_base/arm/include/CMSIS" --include_path="/home/pops/MicroControllers/ROS_MSP432_Red/RosMspSerial_Io" --include_path="/opt/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include" --advice:power=all --define=LED_HEARTBEAT --define=LED_RX_BLINK --define=LED_TX_BLINK --define=__MSP432P401R__ -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="src/clocks.d_raw" --obj_directory="src"  "../src/clocks.c"
+Finished building: "../src/clocks.c"
+ 
+Building file: "../src/my_uart.c"
+Invoking: ARM Compiler
+"/opt/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/home/pops/MicroControllers/ROS_MSP432_Red/RosLib" --include_path="/home/pops/MicroControllers/ROS_MSP432_Red/RosMspSerial_Io/src" --include_path="/home/pops/ti/simplelink_msp432p4_sdk_2_20_00_12/source" --include_path="/home/pops/ti/simplelink_msp432p4_sdk_2_20_00_12/source/ti/devices/msp432p4xx/driverlib" --include_path="/opt/ti/ccsv8/ccs_base/arm/include" --include_path="/opt/ti/ccsv8/ccs_base/arm/include/CMSIS" --include_path="/home/pops/MicroControllers/ROS_MSP432_Red/RosMspSerial_Io" --include_path="/opt/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/include" --advice:power=all --define=LED_HEARTBEAT --define=LED_RX_BLINK --define=LED_TX_BLINK --define=__MSP432P401R__ -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="src/my_uart.d_raw" --obj_directory="src"  "../src/my_uart.c"
+Finished building: "../src/my_uart.c"
+ 
+Building target: "RosMspSerial_Io.lib"
+Invoking: ARM Archiver
+"/opt/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.4.LTS/bin/armar" r "RosMspSerial_Io.lib" "./src/clocks.obj" "./src/duration.obj" "./src/msp432_serial_io.obj" "./src/my_uart.obj" "./src/time.obj" "../src/msp432p401r.cmd" 
+  ==>  new archive 'RosMspSerial_Io.lib'
+  ==>  building archive 'RosMspSerial_Io.lib'
+Finished building target: "RosMspSerial_Io.lib"
+ 
+
+**** Build Finished ****

@@ -1,0 +1,44 @@
+/*
+ * interface_class.h
+ *
+ *  Created on: Nov 28, 2018
+ *      Author: pops
+ */
+
+#ifndef ROS_MSP432_IO_H_
+#define ROS_MSP432_IO_H_
+
+//#include <inttypes.h>
+#include <ros.h>
+#include <std_msgs/String.h>
+#include "cmd_status.h"
+
+#define CHAR_STR_SIZE    256
+class RosMSP432_Io
+{
+    public:
+        RosMSP432_Io(void);
+        bool handleCommand(unsigned command, ros::Publisher pub, std_msgs::String txMsg);
+        unsigned parseMessage(void);
+        bool     getIntParameter(int *parameter);
+        bool     getFloatParameter(float *parameter);
+        bool     getStringParameter(unsigned size, char *parameter);
+        int      getError(void) { return messageError; }
+        int      getInteger(void) { return integerValue; }
+        int      getFloat(void)   { return floatValue; }
+        void     toggleLed(void);
+        void     setInteger(int integerValue) { this->integerValue = integerValue; }
+        void     setFloat(int floatValue) { this->floatValue = floatValue; }
+        int      setCharStr(int size, char *charStr);
+        int      getCharStr(int size, char *charStr);
+     private:
+         int   messageError;
+         int   integerValue;
+         float floatValue;
+         char  sprintfBuffer[256];
+         char  charStr[CHAR_STR_SIZE];
+     public:
+         char *messageStrPtr;
+     private:
+};
+#endif

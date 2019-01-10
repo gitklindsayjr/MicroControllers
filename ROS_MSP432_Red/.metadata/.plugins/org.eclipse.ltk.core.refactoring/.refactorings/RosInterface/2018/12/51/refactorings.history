@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;RosInterface/main.c&apos; to &apos;test_ros_interface.cpp&apos;" description="Rename resource &apos;main.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="main.c" name="test_ros_interface.cpp" stamp="1545510769424" updateReferences="true"/>
+</session>

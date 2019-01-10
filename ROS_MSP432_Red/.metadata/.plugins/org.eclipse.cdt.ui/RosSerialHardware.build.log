@@ -1,0 +1,8 @@
+
+**** Build of configuration Debug for project RosSerialHardware ****
+
+/opt/ti/ccsv8/utils/bin/gmake -k -j 8 all -O 
+ 
+gmake: Nothing to be done for 'all'.
+
+**** Build Finished ****

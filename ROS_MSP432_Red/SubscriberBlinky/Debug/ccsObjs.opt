@@ -1,0 +1,1 @@
+"./ccs/startup_msp432p401r_ccs.obj" "./ccs/system_msp432p401r.obj" "./src/blinky.obj" "./src/led.obj" "../msp432p401r.cmd" -lRosMspHardware.lib -llibc.a -lmsp432p4xx_driverlib.lib 
